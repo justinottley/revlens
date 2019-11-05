@@ -33,15 +33,12 @@ Check dev blog for the most up-to-date info on current functionality and develop
 ## Timeline
 
 - Multitrack media
-- resizable split slider
+- movable split slider
 - global in / out points
 - horizontal zoombar
-- track visibility toggle
-- extendible track actions / gear menu
-- waveform display
-- thumbnail display
-- frame tick display (auto scaling)
+- per-clip waveform and thumbnail display
 - per-clip in and out points
+- frame ticks (auto scaling)
 - custom tracks
 
 ## Annotations
