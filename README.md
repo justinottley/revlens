@@ -52,7 +52,7 @@ revlens is a multitrack media playback and review toolset.
 
 ## Sync
 
-- real time, room-based sync for arbitrary participants
+- real time, room-based sync for arbitrary number of participants
 - multitrack sync
 - annotation sync
 
