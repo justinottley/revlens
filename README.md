@@ -67,3 +67,7 @@ Check dev blog for the most up-to-date info on current functionality and develop
 - custom layouts
 - custom widgets (Qt / Python or Javascript / web based)
 - load and save sessions
+
+# Download
+
+revlens is not currently available for public use (yet). Feel free to contact me if you are interested in the product!
