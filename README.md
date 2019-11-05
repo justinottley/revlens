@@ -2,7 +2,7 @@ revlens is a multitrack media playback and review toolset.
 
 <img src="images/revlens_bbb_Nov4_2019.png"/>
 
-# Features - 11.05.2019
+# Features - 19.05.11
 
 ## Platform support
 
@@ -13,11 +13,12 @@ revlens is a multitrack media playback and review toolset.
 - frame accurate scrubbing
 - mutlithreaded lookahead caching
 - gapless playback (video and audio)
+- playback modes (forward, backward, ping pong)
 
 ## Format support
 
 - Format support via plugin architecture
-- Frame sequence and container media (mov, avi, mp4, etc)
+- Frame sequence (tif, jpg, exr, etc) and container media (mov, avi, mp4, etc)
 - Audio (separate audio files or emebedded audio in media container)
 - Implemented plugins: FFMpeg, OpenEXR, common image formats (tiff, jpg, etc)
 
@@ -43,7 +44,8 @@ revlens is a multitrack media playback and review toolset.
 
 ## Annotations
 
-- Multitrack Annotations
+- per-frame annotations
+- multitrack annotations
 - real time held frames
 - brush system
 - palm rejection (iOS)
@@ -65,3 +67,4 @@ revlens is a multitrack media playback and review toolset.
 - tiling, nonoverlapping UI panes
 - custom layouts
 - custom widgets (Qt / Python or Javascript / web based)
+- load and save sessions
