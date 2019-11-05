@@ -4,6 +4,8 @@ revlens is a multitrack media playback and review toolset.
 
 # Features - 19.05.11
 
+Check dev blog for the most up-to-date info on current functionality and development progress.
+
 ## Platform support
 
 - Linux, Windows, OSX, iOS
