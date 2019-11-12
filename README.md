@@ -1,4 +1,4 @@
-revlens is a multitrack media playback and review toolset.
+revlens is a multitrack media playback and review toolset with realtime annotations and multiuser sync.
 
 <img src="images/revlens_bbb_Nov4_2019.png"/>
 
