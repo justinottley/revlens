@@ -1,4 +1,6 @@
-Dev Blog
+# revlens - Dev Blog
+
+A journal for development on revlens
 
 # Nov 2019
 
