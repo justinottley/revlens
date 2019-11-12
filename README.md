@@ -4,7 +4,7 @@ revlens is a multitrack media playback and review toolset with realtime annotati
 
 # Features - 19.05.11
 
-Check dev blog for the most up-to-date info on current functionality and development progress.
+Check [dev blog](dev_blog.md) for the most up-to-date info on current functionality and development progress.
 
 ## Platform support
 
