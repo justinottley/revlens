@@ -1,6 +1,6 @@
 revlens is a multitrack media playback and review toolset with realtime annotations and multiuser sync.
 
-<img src="images/revlens_bbb_Nov4_2019.png"/>
+<img src="images/revlens_May1_2020.png"/>
 
 # Features - 19.05.11
 
