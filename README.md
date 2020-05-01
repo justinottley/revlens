@@ -8,7 +8,7 @@ Check [dev blog](dev_blog.md) for the most up-to-date info on current functional
 
 ## Platform support
 
-- Linux, Windows, OSX, iOS
+- Linux, Windows, OSX, iOS, Web (via WebAssembly beta build)
 
 ## Playback
 
