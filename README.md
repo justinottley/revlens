@@ -1,14 +1,15 @@
 revlens is a multitrack media playback and review toolset with realtime annotations and multiuser sync.
 
-<img src="images/revlens_May1_2020.png"/>
+<img src="images/revlens_23_11_27_fullscreen.png"/>
 
-# Features - 19.05.11
-
-Check [dev blog](dev_blog.md) for the most up-to-date info on current functionality and development progress.
 
 ## Platform support
 
-- Linux, Windows, OSX, iOS, Web (via WebAssembly beta build)
+- Linux, Windows, macOS, iOS, Web (via WebAssembly)
+
+# Download
+
+- Find precompiled binary download links at https://revlens.io
 
 ## Playback
 
@@ -22,10 +23,11 @@ Check [dev blog](dev_blog.md) for the most up-to-date info on current functional
 - Format support via plugin architecture
 - Frame sequence (tif, jpg, exr, etc) and container media (mov, avi, mp4, etc)
 - Audio (separate audio files or emebedded audio in media container)
-- Implemented plugins: FFMpeg, OpenEXR, common image formats (tiff, jpg, etc)
+- Implemented plugins: FFMpeg, OpenEXR, OpenImageIO, common image formats (tiff, jpg, etc)
 
 ## Display
 
+- OpenColorIO v2 Full Display Pipeline
 - Zoom, Pan
 - Linear and nonlinear encoding (OCIO support coming soon)
 - real time heads up display
@@ -68,6 +70,4 @@ Check [dev blog](dev_blog.md) for the most up-to-date info on current functional
 - custom widgets (Qt / Python or Javascript / web based)
 - load and save sessions
 
-# Download
 
-revlens is not currently available for public use (yet). Feel free to contact me if you are interested in the product!
