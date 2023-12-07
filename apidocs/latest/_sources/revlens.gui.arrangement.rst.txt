@@ -1,0 +1,10 @@
+revlens.gui.arrangement package
+===============================
+
+Module contents
+---------------
+
+.. automodule:: revlens.gui.arrangement
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RlpRevlensCNTRLmodule module &mdash; revlens 23.11.20 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=9cbcb6cc"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            revlens
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">RlpRevlensCNTRLmodule module</a><ul>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Audio"><code class="docutils literal notranslate"><span class="pre">CNTRL_Audio</span></code></a><ul>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Audio.audioReady"><code class="docutils literal notranslate"><span class="pre">CNTRL_Audio.audioReady</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Audio.bufferFillEvent"><code class="docutils literal notranslate"><span class="pre">CNTRL_Audio.bufferFillEvent</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Audio.cache"><code class="docutils literal notranslate"><span class="pre">CNTRL_Audio.cache()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Audio.clearAll"><code class="docutils literal notranslate"><span class="pre">CNTRL_Audio.clearAll()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Audio.enabled"><code class="docutils literal notranslate"><span class="pre">CNTRL_Audio.enabled()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Audio.fillBuffer"><code class="docutils literal notranslate"><span class="pre">CNTRL_Audio.fillBuffer()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Audio.getTargetFrameRate"><code class="docutils literal notranslate"><span class="pre">CNTRL_Audio.getTargetFrameRate()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Audio.onMgrAudioReady"><code class="docutils literal notranslate"><span class="pre">CNTRL_Audio.onMgrAudioReady()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Audio.onMgrBufferFillEvent"><code class="docutils literal notranslate"><span class="pre">CNTRL_Audio.onMgrBufferFillEvent()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Audio.onScrubEnd"><code class="docutils literal notranslate"><span class="pre">CNTRL_Audio.onScrubEnd()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Audio.onStartupReady"><code class="docutils literal notranslate"><span class="pre">CNTRL_Audio.onStartupReady()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Audio.resume"><code class="docutils literal notranslate"><span class="pre">CNTRL_Audio.resume()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Audio.setEnabled"><code class="docutils literal notranslate"><span class="pre">CNTRL_Audio.setEnabled()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Audio.setTargetFrameRate"><code class="docutils literal notranslate"><span class="pre">CNTRL_Audio.setTargetFrameRate()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Audio.setVolume"><code class="docutils literal notranslate"><span class="pre">CNTRL_Audio.setVolume()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Audio.stop"><code class="docutils literal notranslate"><span class="pre">CNTRL_Audio.stop()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Audio.updateToFrame"><code class="docutils literal notranslate"><span class="pre">CNTRL_Audio.updateToFrame()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController"><code class="docutils literal notranslate"><span class="pre">CNTRL_MainController</span></code></a><ul>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.clearAll"><code class="docutils literal notranslate"><span class="pre">CNTRL_MainController.clearAll()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.currentFrameNum"><code class="docutils literal notranslate"><span class="pre">CNTRL_MainController.currentFrameNum()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.emitStartupReady"><code class="docutils literal notranslate"><span class="pre">CNTRL_MainController.emitStartupReady()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.emitSyncAction"><code class="docutils literal notranslate"><span class="pre">CNTRL_MainController.emitSyncAction()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.emitToolCreated"><code class="docutils literal notranslate"><span class="pre">CNTRL_MainController.emitToolCreated()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.forceQuit"><code class="docutils literal notranslate"><span class="pre">CNTRL_MainController.forceQuit()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.getAudioManager"><code class="docutils literal notranslate"><span class="pre">CNTRL_MainController.getAudioManager()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.getEventPluginByName"><code class="docutils literal notranslate"><span class="pre">CNTRL_MainController.getEventPluginByName()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.getEventPluginNames"><code class="docutils literal notranslate"><span class="pre">CNTRL_MainController.getEventPluginNames()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.getMediaManager"><code class="docutils literal notranslate"><span class="pre">CNTRL_MainController.getMediaManager()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.getPlaybackState"><code class="docutils literal notranslate"><span class="pre">CNTRL_MainController.getPlaybackState()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.getPluginManager"><code class="docutils literal notranslate"><span class="pre">CNTRL_MainController.getPluginManager()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.getServerManager"><code class="docutils literal notranslate"><span class="pre">CNTRL_MainController.getServerManager()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.getVideoManager"><code class="docutils literal notranslate"><span class="pre">CNTRL_MainController.getVideoManager()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.gotoFrame"><code class="docutils literal notranslate"><span class="pre">CNTRL_MainController.gotoFrame()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.handleRemoteCall"><code class="docutils literal notranslate"><span class="pre">CNTRL_MainController.handleRemoteCall()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.inFrame"><code class="docutils literal notranslate"><span class="pre">CNTRL_MainController.inFrame()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.isPaused"><code class="docutils literal notranslate"><span class="pre">CNTRL_MainController.isPaused()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.isPlaying"><code class="docutils literal notranslate"><span class="pre">CNTRL_MainController.isPlaying()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.keyPressEventInternal"><code class="docutils literal notranslate"><span class="pre">CNTRL_MainController.keyPressEventInternal()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.keyReleaseEventInternal"><code class="docutils literal notranslate"><span class="pre">CNTRL_MainController.keyReleaseEventInternal()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.loginCntrl"><code class="docutils literal notranslate"><span class="pre">CNTRL_MainController.loginCntrl()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.mediaLoaded"><code class="docutils literal notranslate"><span class="pre">CNTRL_MainController.mediaLoaded</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.outFrame"><code class="docutils literal notranslate"><span class="pre">CNTRL_MainController.outFrame()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.pause"><code class="docutils literal notranslate"><span class="pre">CNTRL_MainController.pause()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.play"><code class="docutils literal notranslate"><span class="pre">CNTRL_MainController.play()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.playPause"><code class="docutils literal notranslate"><span class="pre">CNTRL_MainController.playPause()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.playStateChanged"><code class="docutils literal notranslate"><span class="pre">CNTRL_MainController.playStateChanged</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.playbackMode"><code class="docutils literal notranslate"><span class="pre">CNTRL_MainController.playbackMode()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.pyCall"><code class="docutils literal notranslate"><span class="pre">CNTRL_MainController.pyCall()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.receivedStartupReady"><code class="docutils literal notranslate"><span class="pre">CNTRL_MainController.receivedStartupReady</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.remoteCall"><code class="docutils literal notranslate"><span class="pre">CNTRL_MainController.remoteCall</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.session"><code class="docutils literal notranslate"><span class="pre">CNTRL_MainController.session()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.sessionChanged"><code class="docutils literal notranslate"><span class="pre">CNTRL_MainController.sessionChanged</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.setInFrame"><code class="docutils literal notranslate"><span class="pre">CNTRL_MainController.setInFrame()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.setOutFrame"><code class="docutils literal notranslate"><span class="pre">CNTRL_MainController.setOutFrame()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.setSession"><code class="docutils literal notranslate"><span class="pre">CNTRL_MainController.setSession()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.setVolume"><code class="docutils literal notranslate"><span class="pre">CNTRL_MainController.setVolume()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.startupReady"><code class="docutils literal notranslate"><span class="pre">CNTRL_MainController.startupReady</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.syncAction"><code class="docutils literal notranslate"><span class="pre">CNTRL_MainController.syncAction</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.toolCreated"><code class="docutils literal notranslate"><span class="pre">CNTRL_MainController.toolCreated</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.volumeChanged"><code class="docutils literal notranslate"><span class="pre">CNTRL_MainController.volumeChanged</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MediaManager"><code class="docutils literal notranslate"><span class="pre">CNTRL_MediaManager</span></code></a><ul>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MediaManager.createMedia"><code class="docutils literal notranslate"><span class="pre">CNTRL_MediaManager.createMedia()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MediaManager.createSession"><code class="docutils literal notranslate"><span class="pre">CNTRL_MediaManager.createSession()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MediaManager.getMediaFactory"><code class="docutils literal notranslate"><span class="pre">CNTRL_MediaManager.getMediaFactory()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MediaManager.getSession"><code class="docutils literal notranslate"><span class="pre">CNTRL_MediaManager.getSession()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MediaManager.identifyMedia"><code class="docutils literal notranslate"><span class="pre">CNTRL_MediaManager.identifyMedia()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MediaManager.loadJsonFile"><code class="docutils literal notranslate"><span class="pre">CNTRL_MediaManager.loadJsonFile()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MediaManager.loadSessionFile"><code class="docutils literal notranslate"><span class="pre">CNTRL_MediaManager.loadSessionFile()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MediaManager.loadSessionObject"><code class="docutils literal notranslate"><span class="pre">CNTRL_MediaManager.loadSessionObject()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MediaManager.mediaSelected"><code class="docutils literal notranslate"><span class="pre">CNTRL_MediaManager.mediaSelected</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MediaManager.nodeDataReady"><code class="docutils literal notranslate"><span class="pre">CNTRL_MediaManager.nodeDataReady</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MediaManager.onMediaRemoved"><code class="docutils literal notranslate"><span class="pre">CNTRL_MediaManager.onMediaRemoved()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MediaManager.onMediaSelectionChanged"><code class="docutils literal notranslate"><span class="pre">CNTRL_MediaManager.onMediaSelectionChanged()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MediaManager.onNodeDataReady"><code class="docutils literal notranslate"><span class="pre">CNTRL_MediaManager.onNodeDataReady()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MediaManager.onSessionSyncAction"><code class="docutils literal notranslate"><span class="pre">CNTRL_MediaManager.onSessionSyncAction()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MediaManager.onTrackCleared"><code class="docutils literal notranslate"><span class="pre">CNTRL_MediaManager.onTrackCleared()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MediaManager.onTrackVisibilityChanged"><code class="docutils literal notranslate"><span class="pre">CNTRL_MediaManager.onTrackVisibilityChanged()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MediaManager.saveSessionFile"><code class="docutils literal notranslate"><span class="pre">CNTRL_MediaManager.saveSessionFile()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MediaManager.sessionSaved"><code class="docutils literal notranslate"><span class="pre">CNTRL_MediaManager.sessionSaved</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MediaManager.setTrackIndexOrderPolicy"><code class="docutils literal notranslate"><span class="pre">CNTRL_MediaManager.setTrackIndexOrderPolicy()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MediaManager.setTrackTypeIndexOrder"><code class="docutils literal notranslate"><span class="pre">CNTRL_MediaManager.setTrackTypeIndexOrder()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MediaManager.trackIndexOrderPolicy"><code class="docutils literal notranslate"><span class="pre">CNTRL_MediaManager.trackIndexOrderPolicy()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MediaManager.trackTypeIndexOrder"><code class="docutils literal notranslate"><span class="pre">CNTRL_MediaManager.trackTypeIndexOrder()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MediaManager.updateSessions"><code class="docutils literal notranslate"><span class="pre">CNTRL_MediaManager.updateSessions()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_PluginManager"><code class="docutils literal notranslate"><span class="pre">CNTRL_PluginManager</span></code></a><ul>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_PluginManager.getMediaPlugin"><code class="docutils literal notranslate"><span class="pre">CNTRL_PluginManager.getMediaPlugin()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_PluginManager.getMediaPlugins"><code class="docutils literal notranslate"><span class="pre">CNTRL_PluginManager.getMediaPlugins()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_PluginManager.registerEventPlugin"><code class="docutils literal notranslate"><span class="pre">CNTRL_PluginManager.registerEventPlugin()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_PluginManager.registerMediaPlugin"><code class="docutils literal notranslate"><span class="pre">CNTRL_PluginManager.registerMediaPlugin()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_PluginManager.registerNodeFactoryPlugin"><code class="docutils literal notranslate"><span class="pre">CNTRL_PluginManager.registerNodeFactoryPlugin()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_PluginManager.registerToolGUI"><code class="docutils literal notranslate"><span class="pre">CNTRL_PluginManager.registerToolGUI()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_PluginManager.registerToolRequested"><code class="docutils literal notranslate"><span class="pre">CNTRL_PluginManager.registerToolRequested</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_PluginManager.registerVideoProbe"><code class="docutils literal notranslate"><span class="pre">CNTRL_PluginManager.registerVideoProbe()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Server"><code class="docutils literal notranslate"><span class="pre">CNTRL_Server</span></code></a><ul>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Server.getCallResult"><code class="docutils literal notranslate"><span class="pre">CNTRL_Server.getCallResult()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Server.hasCallResult"><code class="docutils literal notranslate"><span class="pre">CNTRL_Server.hasCallResult()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Server.licenseCheck"><code class="docutils literal notranslate"><span class="pre">CNTRL_Server.licenseCheck()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Server.onLicenseRequestFinished"><code class="docutils literal notranslate"><span class="pre">CNTRL_Server.onLicenseRequestFinished()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Server.onRemoteCallReceived"><code class="docutils literal notranslate"><span class="pre">CNTRL_Server.onRemoteCallReceived()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Server.sendCallInternal"><code class="docutils literal notranslate"><span class="pre">CNTRL_Server.sendCallInternal()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Server.sendCallInternalTo"><code class="docutils literal notranslate"><span class="pre">CNTRL_Server.sendCallInternalTo()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Server.sendCallToService"><code class="docutils literal notranslate"><span class="pre">CNTRL_Server.sendCallToService()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Server.serviceReady"><code class="docutils literal notranslate"><span class="pre">CNTRL_Server.serviceReady</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Server.services"><code class="docutils literal notranslate"><span class="pre">CNTRL_Server.services()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Server.setWebSocketClient"><code class="docutils literal notranslate"><span class="pre">CNTRL_Server.setWebSocketClient()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Server.startBatchService"><code class="docutils literal notranslate"><span class="pre">CNTRL_Server.startBatchService()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Server.startIOService"><code class="docutils literal notranslate"><span class="pre">CNTRL_Server.startIOService()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Server.webSocketServerPort"><code class="docutils literal notranslate"><span class="pre">CNTRL_Server.webSocketServerPort()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Server.wsClient"><code class="docutils literal notranslate"><span class="pre">CNTRL_Server.wsClient()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Video"><code class="docutils literal notranslate"><span class="pre">CNTRL_Video</span></code></a><ul>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Video.cache"><code class="docutils literal notranslate"><span class="pre">CNTRL_Video.cache()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Video.clearAll"><code class="docutils literal notranslate"><span class="pre">CNTRL_Video.clearAll()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Video.currentFrameNum"><code class="docutils literal notranslate"><span class="pre">CNTRL_Video.currentFrameNum()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Video.deregisterDisplay"><code class="docutils literal notranslate"><span class="pre">CNTRL_Video.deregisterDisplay()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Video.displayContextMenuItemSelected"><code class="docutils literal notranslate"><span class="pre">CNTRL_Video.displayContextMenuItemSelected</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Video.displayDeregistered"><code class="docutils literal notranslate"><span class="pre">CNTRL_Video.displayDeregistered</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Video.displayNextFrame"><code class="docutils literal notranslate"><span class="pre">CNTRL_Video.displayNextFrame()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Video.frameDisplayed"><code class="docutils literal notranslate"><span class="pre">CNTRL_Video.frameDisplayed</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Video.getDisplayByIdx"><code class="docutils literal notranslate"><span class="pre">CNTRL_Video.getDisplayByIdx()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Video.getDisplayCount"><code class="docutils literal notranslate"><span class="pre">CNTRL_Video.getDisplayCount()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Video.getDisplays"><code class="docutils literal notranslate"><span class="pre">CNTRL_Video.getDisplays()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Video.getTargetFrameRate"><code class="docutils literal notranslate"><span class="pre">CNTRL_Video.getTargetFrameRate()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Video.isCached"><code class="docutils literal notranslate"><span class="pre">CNTRL_Video.isCached()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Video.isScrubbing"><code class="docutils literal notranslate"><span class="pre">CNTRL_Video.isScrubbing()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Video.onFrameCountChanged"><code class="docutils literal notranslate"><span class="pre">CNTRL_Video.onFrameCountChanged()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Video.onFrameRead"><code class="docutils literal notranslate"><span class="pre">CNTRL_Video.onFrameRead()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Video.onScrubEnd"><code class="docutils literal notranslate"><span class="pre">CNTRL_Video.onScrubEnd()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Video.onScrubStart"><code class="docutils literal notranslate"><span class="pre">CNTRL_Video.onScrubStart()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Video.playbackMode"><code class="docutils literal notranslate"><span class="pre">CNTRL_Video.playbackMode()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Video.probeSyncUpdateImmediate"><code class="docutils literal notranslate"><span class="pre">CNTRL_Video.probeSyncUpdateImmediate()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Video.recenter"><code class="docutils literal notranslate"><span class="pre">CNTRL_Video.recenter()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Video.registerDisplay"><code class="docutils literal notranslate"><span class="pre">CNTRL_Video.registerDisplay()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Video.registerDisplayContextMenuItem"><code class="docutils literal notranslate"><span class="pre">CNTRL_Video.registerDisplayContextMenuItem()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Video.resume"><code class="docutils literal notranslate"><span class="pre">CNTRL_Video.resume()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Video.setTargetFrameRate"><code class="docutils literal notranslate"><span class="pre">CNTRL_Video.setTargetFrameRate()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Video.stop"><code class="docutils literal notranslate"><span class="pre">CNTRL_Video.stop()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Video.update"><code class="docutils literal notranslate"><span class="pre">CNTRL_Video.update()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Video.updateToFrame"><code class="docutils literal notranslate"><span class="pre">CNTRL_Video.updateToFrame()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Video.updateToFrameAsync"><code class="docutils literal notranslate"><span class="pre">CNTRL_Video.updateToFrameAsync()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#RlpRevlensCNTRLmodule.init_module"><code class="docutils literal notranslate"><span class="pre">init_module()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">revlens</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">RlpRevlensCNTRLmodule module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/RlpRevlensCNTRLmodule.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="rlprevlenscntrlmodule-module">
+<h1>RlpRevlensCNTRLmodule module<a class="headerlink" href="#rlprevlenscntrlmodule-module" title="Link to this heading"></a></h1>
+<dl class="py class" id="module-RlpRevlensCNTRLmodule">
+<span id="cntrl-module"></span><dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_Audio">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">RlpRevlensCNTRLmodule.</span></span><span class="sig-name descname"><span class="pre">CNTRL_Audio</span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_Audio" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_object</span></code></p>
+<dl class="py property">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_Audio.audioReady">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">audioReady</span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_Audio.audioReady" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_Audio.bufferFillEvent">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">bufferFillEvent</span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_Audio.bufferFillEvent" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_Audio.cache">
+<span class="sig-name descname"><span class="pre">cache</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Audio" title="RlpRevlensCNTRLmodule.CNTRL_Audio"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_Audio</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="RlpRevlensAUDIOmodule.html#RlpRevlensAUDIOmodule.AUDIO_Cache" title="RlpRevlensAUDIOmodule.AUDIO_Cache"><span class="pre">AUDIO_Cache</span></a></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_Audio.cache" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_Audio.clearAll">
+<span class="sig-name descname"><span class="pre">clearAll</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Audio" title="RlpRevlensCNTRLmodule.CNTRL_Audio"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_Audio</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_Audio.clearAll" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_Audio.enabled">
+<span class="sig-name descname"><span class="pre">enabled</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Audio" title="RlpRevlensCNTRLmodule.CNTRL_Audio"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_Audio</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_Audio.enabled" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_Audio.fillBuffer">
+<span class="sig-name descname"><span class="pre">fillBuffer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Audio" title="RlpRevlensCNTRLmodule.CNTRL_Audio"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_Audio</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_Audio.fillBuffer" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_Audio.getTargetFrameRate">
+<span class="sig-name descname"><span class="pre">getTargetFrameRate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Audio" title="RlpRevlensCNTRLmodule.CNTRL_Audio"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_Audio</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_Audio.getTargetFrameRate" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_Audio.onMgrAudioReady">
+<span class="sig-name descname"><span class="pre">onMgrAudioReady</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Audio" title="RlpRevlensCNTRLmodule.CNTRL_Audio"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_Audio</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_Audio.onMgrAudioReady" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_Audio.onMgrBufferFillEvent">
+<span class="sig-name descname"><span class="pre">onMgrBufferFillEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self:</span> <span class="pre">RlpRevlensCNTRLmodule.CNTRL_Audio</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0:</span> <span class="pre">QList&lt;long</span> <span class="pre">long&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_Audio.onMgrBufferFillEvent" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_Audio.onScrubEnd">
+<span class="sig-name descname"><span class="pre">onScrubEnd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Audio" title="RlpRevlensCNTRLmodule.CNTRL_Audio"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_Audio</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_Audio.onScrubEnd" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_Audio.onStartupReady">
+<span class="sig-name descname"><span class="pre">onStartupReady</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Audio" title="RlpRevlensCNTRLmodule.CNTRL_Audio"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_Audio</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_Audio.onStartupReady" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_Audio.resume">
+<span class="sig-name descname"><span class="pre">resume</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Audio" title="RlpRevlensCNTRLmodule.CNTRL_Audio"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_Audio</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_Audio.resume" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_Audio.setEnabled">
+<span class="sig-name descname"><span class="pre">setEnabled</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Audio" title="RlpRevlensCNTRLmodule.CNTRL_Audio"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_Audio</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_Audio.setEnabled" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_Audio.setTargetFrameRate">
+<span class="sig-name descname"><span class="pre">setTargetFrameRate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Audio" title="RlpRevlensCNTRLmodule.CNTRL_Audio"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_Audio</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_Audio.setTargetFrameRate" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_Audio.setVolume">
+<span class="sig-name descname"><span class="pre">setVolume</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Audio" title="RlpRevlensCNTRLmodule.CNTRL_Audio"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_Audio</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_Audio.setVolume" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_Audio.stop">
+<span class="sig-name descname"><span class="pre">stop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Audio" title="RlpRevlensCNTRLmodule.CNTRL_Audio"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_Audio</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_Audio.stop" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_Audio.updateToFrame">
+<span class="sig-name descname"><span class="pre">updateToFrame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Audio" title="RlpRevlensCNTRLmodule.CNTRL_Audio"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_Audio</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_Audio.updateToFrame" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_MainController">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">RlpRevlensCNTRLmodule.</span></span><span class="sig-name descname"><span class="pre">CNTRL_MainController</span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_MainController" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_MainController.clearAll">
+<span class="sig-name descname"><span class="pre">clearAll</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController" title="RlpRevlensCNTRLmodule.CNTRL_MainController"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_MainController</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.clearAll" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_MainController.currentFrameNum">
+<span class="sig-name descname"><span class="pre">currentFrameNum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController" title="RlpRevlensCNTRLmodule.CNTRL_MainController"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_MainController</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.currentFrameNum" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_MainController.emitStartupReady">
+<span class="sig-name descname"><span class="pre">emitStartupReady</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController" title="RlpRevlensCNTRLmodule.CNTRL_MainController"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_MainController</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.emitStartupReady" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_MainController.emitSyncAction">
+<span class="sig-name descname"><span class="pre">emitSyncAction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController" title="RlpRevlensCNTRLmodule.CNTRL_MainController"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_MainController</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.emitSyncAction" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_MainController.emitToolCreated">
+<span class="sig-name descname"><span class="pre">emitToolCreated</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController" title="RlpRevlensCNTRLmodule.CNTRL_MainController"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_MainController</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">RlpGuiBASEmodule.GUI_ItemBase</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.emitToolCreated" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_MainController.forceQuit">
+<span class="sig-name descname"><span class="pre">forceQuit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController" title="RlpRevlensCNTRLmodule.CNTRL_MainController"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_MainController</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.forceQuit" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_MainController.getAudioManager">
+<span class="sig-name descname"><span class="pre">getAudioManager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController" title="RlpRevlensCNTRLmodule.CNTRL_MainController"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_MainController</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Audio" title="RlpRevlensCNTRLmodule.CNTRL_Audio"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_Audio</span></a></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.getAudioManager" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_MainController.getEventPluginByName">
+<span class="sig-name descname"><span class="pre">getEventPluginByName</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController" title="RlpRevlensCNTRLmodule.CNTRL_MainController"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_MainController</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="RlpRevlensDSmodule.html#RlpRevlensDSmodule.DS_EventPlugin" title="RlpRevlensDSmodule.DS_EventPlugin"><span class="pre">DS_EventPlugin</span></a></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.getEventPluginByName" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_MainController.getEventPluginNames">
+<span class="sig-name descname"><span class="pre">getEventPluginNames</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController" title="RlpRevlensCNTRLmodule.CNTRL_MainController"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_MainController</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.getEventPluginNames" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_MainController.getMediaManager">
+<span class="sig-name descname"><span class="pre">getMediaManager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController" title="RlpRevlensCNTRLmodule.CNTRL_MainController"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_MainController</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MediaManager" title="RlpRevlensCNTRLmodule.CNTRL_MediaManager"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_MediaManager</span></a></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.getMediaManager" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_MainController.getPlaybackState">
+<span class="sig-name descname"><span class="pre">getPlaybackState</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController" title="RlpRevlensCNTRLmodule.CNTRL_MainController"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_MainController</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.getPlaybackState" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_MainController.getPluginManager">
+<span class="sig-name descname"><span class="pre">getPluginManager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController" title="RlpRevlensCNTRLmodule.CNTRL_MainController"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_MainController</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_PluginManager" title="RlpRevlensCNTRLmodule.CNTRL_PluginManager"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_PluginManager</span></a></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.getPluginManager" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_MainController.getServerManager">
+<span class="sig-name descname"><span class="pre">getServerManager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController" title="RlpRevlensCNTRLmodule.CNTRL_MainController"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_MainController</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Server" title="RlpRevlensCNTRLmodule.CNTRL_Server"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_Server</span></a></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.getServerManager" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_MainController.getVideoManager">
+<span class="sig-name descname"><span class="pre">getVideoManager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController" title="RlpRevlensCNTRLmodule.CNTRL_MainController"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_MainController</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Video" title="RlpRevlensCNTRLmodule.CNTRL_Video"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_Video</span></a></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.getVideoManager" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_MainController.gotoFrame">
+<span class="sig-name descname"><span class="pre">gotoFrame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController" title="RlpRevlensCNTRLmodule.CNTRL_MainController"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_MainController</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg3</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.gotoFrame" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_MainController.handleRemoteCall">
+<span class="sig-name descname"><span class="pre">handleRemoteCall</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController" title="RlpRevlensCNTRLmodule.CNTRL_MainController"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_MainController</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.handleRemoteCall" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_MainController.inFrame">
+<span class="sig-name descname"><span class="pre">inFrame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController" title="RlpRevlensCNTRLmodule.CNTRL_MainController"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_MainController</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.inFrame" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_MainController.isPaused">
+<span class="sig-name descname"><span class="pre">isPaused</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController" title="RlpRevlensCNTRLmodule.CNTRL_MainController"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_MainController</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.isPaused" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_MainController.isPlaying">
+<span class="sig-name descname"><span class="pre">isPlaying</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController" title="RlpRevlensCNTRLmodule.CNTRL_MainController"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_MainController</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.isPlaying" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_MainController.keyPressEventInternal">
+<span class="sig-name descname"><span class="pre">keyPressEventInternal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController" title="RlpRevlensCNTRLmodule.CNTRL_MainController"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_MainController</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">QKeyEvent</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.keyPressEventInternal" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_MainController.keyReleaseEventInternal">
+<span class="sig-name descname"><span class="pre">keyReleaseEventInternal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController" title="RlpRevlensCNTRLmodule.CNTRL_MainController"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_MainController</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">QKeyEvent</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.keyReleaseEventInternal" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_MainController.loginCntrl">
+<span class="sig-name descname"><span class="pre">loginCntrl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController" title="RlpRevlensCNTRLmodule.CNTRL_MainController"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_MainController</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">RlpCoreCNTRLmodule.CoreCntrl_Auth</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.loginCntrl" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_MainController.mediaLoaded">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">mediaLoaded</span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.mediaLoaded" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_MainController.outFrame">
+<span class="sig-name descname"><span class="pre">outFrame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController" title="RlpRevlensCNTRLmodule.CNTRL_MainController"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_MainController</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.outFrame" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_MainController.pause">
+<span class="sig-name descname"><span class="pre">pause</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController" title="RlpRevlensCNTRLmodule.CNTRL_MainController"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_MainController</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.pause" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_MainController.play">
+<span class="sig-name descname"><span class="pre">play</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController" title="RlpRevlensCNTRLmodule.CNTRL_MainController"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_MainController</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.play" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_MainController.playPause">
+<span class="sig-name descname"><span class="pre">playPause</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController" title="RlpRevlensCNTRLmodule.CNTRL_MainController"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_MainController</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.playPause" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_MainController.playStateChanged">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">playStateChanged</span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.playStateChanged" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_MainController.playbackMode">
+<span class="sig-name descname"><span class="pre">playbackMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController" title="RlpRevlensCNTRLmodule.CNTRL_MainController"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_MainController</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="RlpRevlensDSmodule.html#RlpRevlensDSmodule.DS_PlaybackMode" title="RlpRevlensDSmodule.DS_PlaybackMode"><span class="pre">DS_PlaybackMode</span></a></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.playbackMode" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_MainController.pyCall">
+<span class="sig-name descname"><span class="pre">pyCall</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController" title="RlpRevlensCNTRLmodule.CNTRL_MainController"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_MainController</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.pyCall" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_MainController.receivedStartupReady">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">receivedStartupReady</span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.receivedStartupReady" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_MainController.remoteCall">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">remoteCall</span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.remoteCall" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_MainController.session">
+<span class="sig-name descname"><span class="pre">session</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController" title="RlpRevlensCNTRLmodule.CNTRL_MainController"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_MainController</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="RlpRevlensDSmodule.html#RlpRevlensDSmodule.DS_Session" title="RlpRevlensDSmodule.DS_Session"><span class="pre">DS_Session</span></a></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.session" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_MainController.sessionChanged">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">sessionChanged</span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.sessionChanged" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_MainController.setInFrame">
+<span class="sig-name descname"><span class="pre">setInFrame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController" title="RlpRevlensCNTRLmodule.CNTRL_MainController"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_MainController</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.setInFrame" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_MainController.setOutFrame">
+<span class="sig-name descname"><span class="pre">setOutFrame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController" title="RlpRevlensCNTRLmodule.CNTRL_MainController"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_MainController</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.setOutFrame" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_MainController.setSession">
+<span class="sig-name descname"><span class="pre">setSession</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController" title="RlpRevlensCNTRLmodule.CNTRL_MainController"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_MainController</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.setSession" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_MainController.setVolume">
+<span class="sig-name descname"><span class="pre">setVolume</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MainController" title="RlpRevlensCNTRLmodule.CNTRL_MainController"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_MainController</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.setVolume" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_MainController.startupReady">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">startupReady</span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.startupReady" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_MainController.syncAction">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">syncAction</span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.syncAction" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_MainController.toolCreated">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">toolCreated</span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.toolCreated" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_MainController.volumeChanged">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">volumeChanged</span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_MainController.volumeChanged" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_MediaManager">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">RlpRevlensCNTRLmodule.</span></span><span class="sig-name descname"><span class="pre">CNTRL_MediaManager</span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_MediaManager" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_MediaManager.createMedia">
+<span class="sig-name descname"><span class="pre">createMedia</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MediaManager" title="RlpRevlensCNTRLmodule.CNTRL_MediaManager"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_MediaManager</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="RlpRevlensDSmodule.html#RlpRevlensDSmodule.DS_Node" title="RlpRevlensDSmodule.DS_Node"><span class="pre">DS_Node</span></a></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_MediaManager.createMedia" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_MediaManager.createSession">
+<span class="sig-name descname"><span class="pre">createSession</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MediaManager" title="RlpRevlensCNTRLmodule.CNTRL_MediaManager"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_MediaManager</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="RlpRevlensDSmodule.html#RlpRevlensDSmodule.DS_Session" title="RlpRevlensDSmodule.DS_Session"><span class="pre">DS_Session</span></a></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_MediaManager.createSession" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_MediaManager.getMediaFactory">
+<span class="sig-name descname"><span class="pre">getMediaFactory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MediaManager" title="RlpRevlensCNTRLmodule.CNTRL_MediaManager"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_MediaManager</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="RlpRevlensMEDIAmodule.html#RlpRevlensMEDIAmodule.MEDIA_Factory" title="RlpRevlensMEDIAmodule.MEDIA_Factory"><span class="pre">MEDIA_Factory</span></a></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_MediaManager.getMediaFactory" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_MediaManager.getSession">
+<span class="sig-name descname"><span class="pre">getSession</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MediaManager" title="RlpRevlensCNTRLmodule.CNTRL_MediaManager"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_MediaManager</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="RlpRevlensDSmodule.html#RlpRevlensDSmodule.DS_Session" title="RlpRevlensDSmodule.DS_Session"><span class="pre">DS_Session</span></a></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_MediaManager.getSession" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_MediaManager.identifyMedia">
+<span class="sig-name descname"><span class="pre">identifyMedia</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MediaManager" title="RlpRevlensCNTRLmodule.CNTRL_MediaManager"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_MediaManager</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_MediaManager.identifyMedia" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_MediaManager.loadJsonFile">
+<span class="sig-name descname"><span class="pre">loadJsonFile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MediaManager" title="RlpRevlensCNTRLmodule.CNTRL_MediaManager"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_MediaManager</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">RlpCoreQTCORE.QJsonObject</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_MediaManager.loadJsonFile" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_MediaManager.loadSessionFile">
+<span class="sig-name descname"><span class="pre">loadSessionFile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MediaManager" title="RlpRevlensCNTRLmodule.CNTRL_MediaManager"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_MediaManager</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_MediaManager.loadSessionFile" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_MediaManager.loadSessionObject">
+<span class="sig-name descname"><span class="pre">loadSessionObject</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MediaManager" title="RlpRevlensCNTRLmodule.CNTRL_MediaManager"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_MediaManager</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_MediaManager.loadSessionObject" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_MediaManager.mediaSelected">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">mediaSelected</span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_MediaManager.mediaSelected" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_MediaManager.nodeDataReady">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">nodeDataReady</span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_MediaManager.nodeDataReady" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_MediaManager.onMediaRemoved">
+<span class="sig-name descname"><span class="pre">onMediaRemoved</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MediaManager" title="RlpRevlensCNTRLmodule.CNTRL_MediaManager"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_MediaManager</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="RlpRevlensDSmodule.html#RlpRevlensDSmodule.DS_Node" title="RlpRevlensDSmodule.DS_Node"><span class="pre">DS_Node</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_MediaManager.onMediaRemoved" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_MediaManager.onMediaSelectionChanged">
+<span class="sig-name descname"><span class="pre">onMediaSelectionChanged</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MediaManager" title="RlpRevlensCNTRLmodule.CNTRL_MediaManager"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_MediaManager</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_MediaManager.onMediaSelectionChanged" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_MediaManager.onNodeDataReady">
+<span class="sig-name descname"><span class="pre">onNodeDataReady</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MediaManager" title="RlpRevlensCNTRLmodule.CNTRL_MediaManager"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_MediaManager</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_MediaManager.onNodeDataReady" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_MediaManager.onSessionSyncAction">
+<span class="sig-name descname"><span class="pre">onSessionSyncAction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MediaManager" title="RlpRevlensCNTRLmodule.CNTRL_MediaManager"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_MediaManager</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_MediaManager.onSessionSyncAction" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_MediaManager.onTrackCleared">
+<span class="sig-name descname"><span class="pre">onTrackCleared</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MediaManager" title="RlpRevlensCNTRLmodule.CNTRL_MediaManager"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_MediaManager</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_MediaManager.onTrackCleared" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_MediaManager.onTrackVisibilityChanged">
+<span class="sig-name descname"><span class="pre">onTrackVisibilityChanged</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MediaManager" title="RlpRevlensCNTRLmodule.CNTRL_MediaManager"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_MediaManager</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_MediaManager.onTrackVisibilityChanged" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_MediaManager.saveSessionFile">
+<span class="sig-name descname"><span class="pre">saveSessionFile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MediaManager" title="RlpRevlensCNTRLmodule.CNTRL_MediaManager"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_MediaManager</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_MediaManager.saveSessionFile" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_MediaManager.sessionSaved">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">sessionSaved</span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_MediaManager.sessionSaved" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_MediaManager.setTrackIndexOrderPolicy">
+<span class="sig-name descname"><span class="pre">setTrackIndexOrderPolicy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self:</span> <span class="pre">RlpRevlensCNTRLmodule.CNTRL_MediaManager</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0:</span> <span class="pre">DS_Session::TrackIndexOrderPolicy</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_MediaManager.setTrackIndexOrderPolicy" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_MediaManager.setTrackTypeIndexOrder">
+<span class="sig-name descname"><span class="pre">setTrackTypeIndexOrder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MediaManager" title="RlpRevlensCNTRLmodule.CNTRL_MediaManager"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_MediaManager</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_MediaManager.setTrackTypeIndexOrder" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_MediaManager.trackIndexOrderPolicy">
+<span class="sig-name descname"><span class="pre">trackIndexOrderPolicy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MediaManager" title="RlpRevlensCNTRLmodule.CNTRL_MediaManager"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_MediaManager</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DS_Session::TrackIndexOrderPolicy</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_MediaManager.trackIndexOrderPolicy" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_MediaManager.trackTypeIndexOrder">
+<span class="sig-name descname"><span class="pre">trackTypeIndexOrder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MediaManager" title="RlpRevlensCNTRLmodule.CNTRL_MediaManager"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_MediaManager</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_MediaManager.trackTypeIndexOrder" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_MediaManager.updateSessions">
+<span class="sig-name descname"><span class="pre">updateSessions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_MediaManager" title="RlpRevlensCNTRLmodule.CNTRL_MediaManager"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_MediaManager</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_MediaManager.updateSessions" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_PluginManager">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">RlpRevlensCNTRLmodule.</span></span><span class="sig-name descname"><span class="pre">CNTRL_PluginManager</span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_PluginManager" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_PluginManager.getMediaPlugin">
+<span class="sig-name descname"><span class="pre">getMediaPlugin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_PluginManager" title="RlpRevlensCNTRLmodule.CNTRL_PluginManager"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_PluginManager</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_PluginManager.getMediaPlugin" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_PluginManager.getMediaPlugins">
+<span class="sig-name descname"><span class="pre">getMediaPlugins</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_PluginManager" title="RlpRevlensCNTRLmodule.CNTRL_PluginManager"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_PluginManager</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_PluginManager.getMediaPlugins" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_PluginManager.registerEventPlugin">
+<span class="sig-name descname"><span class="pre">registerEventPlugin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_PluginManager" title="RlpRevlensCNTRLmodule.CNTRL_PluginManager"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_PluginManager</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="RlpRevlensDSmodule.html#RlpRevlensDSmodule.DS_EventPlugin" title="RlpRevlensDSmodule.DS_EventPlugin"><span class="pre">DS_EventPlugin</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_PluginManager.registerEventPlugin" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_PluginManager.registerMediaPlugin">
+<span class="sig-name descname"><span class="pre">registerMediaPlugin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_PluginManager" title="RlpRevlensCNTRLmodule.CNTRL_PluginManager"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_PluginManager</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="RlpRevlensMEDIAmodule.html#RlpRevlensMEDIAmodule.MEDIA_Plugin" title="RlpRevlensMEDIAmodule.MEDIA_Plugin"><span class="pre">MEDIA_Plugin</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_PluginManager.registerMediaPlugin" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_PluginManager.registerNodeFactoryPlugin">
+<span class="sig-name descname"><span class="pre">registerNodeFactoryPlugin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_PluginManager" title="RlpRevlensCNTRLmodule.CNTRL_PluginManager"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_PluginManager</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="RlpRevlensDSmodule.html#RlpRevlensDSmodule.DS_NodeFactoryPlugin" title="RlpRevlensDSmodule.DS_NodeFactoryPlugin"><span class="pre">DS_NodeFactoryPlugin</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_PluginManager.registerNodeFactoryPlugin" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_PluginManager.registerToolGUI">
+<span class="sig-name descname"><span class="pre">registerToolGUI</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_PluginManager" title="RlpRevlensCNTRLmodule.CNTRL_PluginManager"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_PluginManager</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_PluginManager.registerToolGUI" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_PluginManager.registerToolRequested">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">registerToolRequested</span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_PluginManager.registerToolRequested" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_PluginManager.registerVideoProbe">
+<span class="sig-name descname"><span class="pre">registerVideoProbe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_PluginManager" title="RlpRevlensCNTRLmodule.CNTRL_PluginManager"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_PluginManager</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DS_SyncProbe</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_PluginManager.registerVideoProbe" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_Server">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">RlpRevlensCNTRLmodule.</span></span><span class="sig-name descname"><span class="pre">CNTRL_Server</span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_Server" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_Server.getCallResult">
+<span class="sig-name descname"><span class="pre">getCallResult</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Server" title="RlpRevlensCNTRLmodule.CNTRL_Server"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_Server</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_Server.getCallResult" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_Server.hasCallResult">
+<span class="sig-name descname"><span class="pre">hasCallResult</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Server" title="RlpRevlensCNTRLmodule.CNTRL_Server"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_Server</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_Server.hasCallResult" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_Server.licenseCheck">
+<span class="sig-name descname"><span class="pre">licenseCheck</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Server" title="RlpRevlensCNTRLmodule.CNTRL_Server"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_Server</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_Server.licenseCheck" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_Server.onLicenseRequestFinished">
+<span class="sig-name descname"><span class="pre">onLicenseRequestFinished</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Server" title="RlpRevlensCNTRLmodule.CNTRL_Server"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_Server</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">QNetworkReply</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_Server.onLicenseRequestFinished" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_Server.onRemoteCallReceived">
+<span class="sig-name descname"><span class="pre">onRemoteCallReceived</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Server" title="RlpRevlensCNTRLmodule.CNTRL_Server"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_Server</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_Server.onRemoteCallReceived" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_Server.sendCallInternal">
+<span class="sig-name descname"><span class="pre">sendCallInternal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Server" title="RlpRevlensCNTRLmodule.CNTRL_Server"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_Server</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_Server.sendCallInternal" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_Server.sendCallInternalTo">
+<span class="sig-name descname"><span class="pre">sendCallInternalTo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Server" title="RlpRevlensCNTRLmodule.CNTRL_Server"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_Server</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_Server.sendCallInternalTo" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_Server.sendCallToService">
+<span class="sig-name descname"><span class="pre">sendCallToService</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Server" title="RlpRevlensCNTRLmodule.CNTRL_Server"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_Server</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg3</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_Server.sendCallToService" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_Server.serviceReady">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">serviceReady</span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_Server.serviceReady" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_Server.services">
+<span class="sig-name descname"><span class="pre">services</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Server" title="RlpRevlensCNTRLmodule.CNTRL_Server"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_Server</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_Server.services" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_Server.setWebSocketClient">
+<span class="sig-name descname"><span class="pre">setWebSocketClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Server" title="RlpRevlensCNTRLmodule.CNTRL_Server"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_Server</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">RlpCoreNETmodule.CoreNet_WebSocketClient</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_Server.setWebSocketClient" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_Server.startBatchService">
+<span class="sig-name descname"><span class="pre">startBatchService</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Server" title="RlpRevlensCNTRLmodule.CNTRL_Server"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_Server</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_Server.startBatchService" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_Server.startIOService">
+<span class="sig-name descname"><span class="pre">startIOService</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Server" title="RlpRevlensCNTRLmodule.CNTRL_Server"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_Server</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_Server.startIOService" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_Server.webSocketServerPort">
+<span class="sig-name descname"><span class="pre">webSocketServerPort</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Server" title="RlpRevlensCNTRLmodule.CNTRL_Server"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_Server</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_Server.webSocketServerPort" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_Server.wsClient">
+<span class="sig-name descname"><span class="pre">wsClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Server" title="RlpRevlensCNTRLmodule.CNTRL_Server"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_Server</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">RlpCoreNETmodule.CoreNet_WebSocketClient</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_Server.wsClient" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_Video">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">RlpRevlensCNTRLmodule.</span></span><span class="sig-name descname"><span class="pre">CNTRL_Video</span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_Video" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_Video.cache">
+<span class="sig-name descname"><span class="pre">cache</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Video" title="RlpRevlensCNTRLmodule.CNTRL_Video"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_Video</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="RlpRevlensVIDEOmodule.html#RlpRevlensVIDEOmodule.VIDEO_LookaheadCache" title="RlpRevlensVIDEOmodule.VIDEO_LookaheadCache"><span class="pre">VIDEO_LookaheadCache</span></a></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_Video.cache" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_Video.clearAll">
+<span class="sig-name descname"><span class="pre">clearAll</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Video" title="RlpRevlensCNTRLmodule.CNTRL_Video"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_Video</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_Video.clearAll" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_Video.currentFrameNum">
+<span class="sig-name descname"><span class="pre">currentFrameNum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Video" title="RlpRevlensCNTRLmodule.CNTRL_Video"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_Video</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_Video.currentFrameNum" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_Video.deregisterDisplay">
+<span class="sig-name descname"><span class="pre">deregisterDisplay</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Video" title="RlpRevlensCNTRLmodule.CNTRL_Video"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_Video</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="RlpRevlensDISPmodule.html#RlpRevlensDISPmodule.DISP_GLView" title="RlpRevlensDISPmodule.DISP_GLView"><span class="pre">DISP_GLView</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_Video.deregisterDisplay" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_Video.displayContextMenuItemSelected">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">displayContextMenuItemSelected</span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_Video.displayContextMenuItemSelected" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_Video.displayDeregistered">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">displayDeregistered</span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_Video.displayDeregistered" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_Video.displayNextFrame">
+<span class="sig-name descname"><span class="pre">displayNextFrame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Video" title="RlpRevlensCNTRLmodule.CNTRL_Video"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_Video</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_Video.displayNextFrame" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_Video.frameDisplayed">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">frameDisplayed</span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_Video.frameDisplayed" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_Video.getDisplayByIdx">
+<span class="sig-name descname"><span class="pre">getDisplayByIdx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Video" title="RlpRevlensCNTRLmodule.CNTRL_Video"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_Video</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="RlpRevlensDISPmodule.html#RlpRevlensDISPmodule.DISP_GLView" title="RlpRevlensDISPmodule.DISP_GLView"><span class="pre">DISP_GLView</span></a></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_Video.getDisplayByIdx" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_Video.getDisplayCount">
+<span class="sig-name descname"><span class="pre">getDisplayCount</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Video" title="RlpRevlensCNTRLmodule.CNTRL_Video"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_Video</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_Video.getDisplayCount" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_Video.getDisplays">
+<span class="sig-name descname"><span class="pre">getDisplays</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Video" title="RlpRevlensCNTRLmodule.CNTRL_Video"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_Video</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">QList&lt;DISP_GLView*&gt;</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_Video.getDisplays" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_Video.getTargetFrameRate">
+<span class="sig-name descname"><span class="pre">getTargetFrameRate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Video" title="RlpRevlensCNTRLmodule.CNTRL_Video"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_Video</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_Video.getTargetFrameRate" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_Video.isCached">
+<span class="sig-name descname"><span class="pre">isCached</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Video" title="RlpRevlensCNTRLmodule.CNTRL_Video"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_Video</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_Video.isCached" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_Video.isScrubbing">
+<span class="sig-name descname"><span class="pre">isScrubbing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Video" title="RlpRevlensCNTRLmodule.CNTRL_Video"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_Video</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_Video.isScrubbing" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_Video.onFrameCountChanged">
+<span class="sig-name descname"><span class="pre">onFrameCountChanged</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Video" title="RlpRevlensCNTRLmodule.CNTRL_Video"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_Video</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_Video.onFrameCountChanged" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_Video.onFrameRead">
+<span class="sig-name descname"><span class="pre">onFrameRead</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Video" title="RlpRevlensCNTRLmodule.CNTRL_Video"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_Video</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">MEDIA_ReadEvent</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_Video.onFrameRead" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_Video.onScrubEnd">
+<span class="sig-name descname"><span class="pre">onScrubEnd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Video" title="RlpRevlensCNTRLmodule.CNTRL_Video"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_Video</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_Video.onScrubEnd" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_Video.onScrubStart">
+<span class="sig-name descname"><span class="pre">onScrubStart</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Video" title="RlpRevlensCNTRLmodule.CNTRL_Video"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_Video</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_Video.onScrubStart" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_Video.playbackMode">
+<span class="sig-name descname"><span class="pre">playbackMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Video" title="RlpRevlensCNTRLmodule.CNTRL_Video"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_Video</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="RlpRevlensDSmodule.html#RlpRevlensDSmodule.DS_PlaybackMode" title="RlpRevlensDSmodule.DS_PlaybackMode"><span class="pre">DS_PlaybackMode</span></a></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_Video.playbackMode" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_Video.probeSyncUpdateImmediate">
+<span class="sig-name descname"><span class="pre">probeSyncUpdateImmediate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Video" title="RlpRevlensCNTRLmodule.CNTRL_Video"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_Video</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_Video.probeSyncUpdateImmediate" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_Video.recenter">
+<span class="sig-name descname"><span class="pre">recenter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Video" title="RlpRevlensCNTRLmodule.CNTRL_Video"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_Video</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_Video.recenter" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_Video.registerDisplay">
+<span class="sig-name descname"><span class="pre">registerDisplay</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Video" title="RlpRevlensCNTRLmodule.CNTRL_Video"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_Video</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="RlpRevlensDISPmodule.html#RlpRevlensDISPmodule.DISP_GLView" title="RlpRevlensDISPmodule.DISP_GLView"><span class="pre">DISP_GLView</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_Video.registerDisplay" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_Video.registerDisplayContextMenuItem">
+<span class="sig-name descname"><span class="pre">registerDisplayContextMenuItem</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Video" title="RlpRevlensCNTRLmodule.CNTRL_Video"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_Video</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_Video.registerDisplayContextMenuItem" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_Video.resume">
+<span class="sig-name descname"><span class="pre">resume</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Video" title="RlpRevlensCNTRLmodule.CNTRL_Video"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_Video</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_Video.resume" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_Video.setTargetFrameRate">
+<span class="sig-name descname"><span class="pre">setTargetFrameRate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Video" title="RlpRevlensCNTRLmodule.CNTRL_Video"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_Video</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_Video.setTargetFrameRate" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_Video.stop">
+<span class="sig-name descname"><span class="pre">stop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Video" title="RlpRevlensCNTRLmodule.CNTRL_Video"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_Video</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_Video.stop" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_Video.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Video" title="RlpRevlensCNTRLmodule.CNTRL_Video"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_Video</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_Video.update" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_Video.updateToFrame">
+<span class="sig-name descname"><span class="pre">updateToFrame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Video" title="RlpRevlensCNTRLmodule.CNTRL_Video"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_Video</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg3</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_Video.updateToFrame" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.CNTRL_Video.updateToFrameAsync">
+<span class="sig-name descname"><span class="pre">updateToFrameAsync</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensCNTRLmodule.CNTRL_Video" title="RlpRevlensCNTRLmodule.CNTRL_Video"><span class="pre">RlpRevlensCNTRLmodule.CNTRL_Video</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.CNTRL_Video.updateToFrameAsync" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="RlpRevlensCNTRLmodule.init_module">
+<span class="sig-prename descclassname"><span class="pre">RlpRevlensCNTRLmodule.</span></span><span class="sig-name descname"><span class="pre">init_module</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensCNTRLmodule.init_module" title="Link to this definition"></a></dt>
+<dd><p>Bootstrap Python Bindings</p>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Justin Ottley.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

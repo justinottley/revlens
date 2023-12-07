@@ -1,0 +1,7 @@
+RlpRevlensAUDIOmodule module
+============================
+
+.. automodule:: RlpRevlensAUDIOmodule
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,0 +1,10 @@
+revlens.gui.timeline package
+============================
+
+Module contents
+---------------
+
+.. automodule:: revlens.gui.timeline
+   :members:
+   :undoc-members:
+   :show-inheritance:

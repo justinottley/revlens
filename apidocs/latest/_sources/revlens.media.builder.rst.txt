@@ -1,0 +1,29 @@
+revlens.media.builder package
+=============================
+
+Submodules
+----------
+
+revlens.media.builder.media\_builder module
+-------------------------------------------
+
+.. automodule:: revlens.media.builder.media_builder
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+revlens.media.builder.session\_builder module
+---------------------------------------------
+
+.. automodule:: revlens.media.builder.session_builder
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: revlens.media.builder
+   :members:
+   :undoc-members:
+   :show-inheritance:

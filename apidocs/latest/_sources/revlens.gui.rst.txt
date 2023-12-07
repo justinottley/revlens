@@ -1,0 +1,20 @@
+revlens.gui package
+===================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   revlens.gui.arrangement
+   revlens.gui.dialogs
+   revlens.gui.timeline
+
+Module contents
+---------------
+
+.. automodule:: revlens.gui
+   :members:
+   :undoc-members:
+   :show-inheritance:

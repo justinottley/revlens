@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>revlens.media.builder package &mdash; revlens 23.11.20 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=9cbcb6cc"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            revlens
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">revlens.media.builder package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-revlens.media.builder.media_builder">revlens.media.builder.media_builder module</a><ul>
+<li><a class="reference internal" href="#revlens.media.builder.media_builder.MediaBuilder"><code class="docutils literal notranslate"><span class="pre">MediaBuilder</span></code></a><ul>
+<li><a class="reference internal" href="#revlens.media.builder.media_builder.MediaBuilder.add_audio_component"><code class="docutils literal notranslate"><span class="pre">MediaBuilder.add_audio_component()</span></code></a></li>
+<li><a class="reference internal" href="#revlens.media.builder.media_builder.MediaBuilder.add_audio_component_info"><code class="docutils literal notranslate"><span class="pre">MediaBuilder.add_audio_component_info()</span></code></a></li>
+<li><a class="reference internal" href="#revlens.media.builder.media_builder.MediaBuilder.add_thumbnail_component"><code class="docutils literal notranslate"><span class="pre">MediaBuilder.add_thumbnail_component()</span></code></a></li>
+<li><a class="reference internal" href="#revlens.media.builder.media_builder.MediaBuilder.add_video_component"><code class="docutils literal notranslate"><span class="pre">MediaBuilder.add_video_component()</span></code></a></li>
+<li><a class="reference internal" href="#revlens.media.builder.media_builder.MediaBuilder.add_video_component_info"><code class="docutils literal notranslate"><span class="pre">MediaBuilder.add_video_component_info()</span></code></a></li>
+<li><a class="reference internal" href="#revlens.media.builder.media_builder.MediaBuilder.metadata"><code class="docutils literal notranslate"><span class="pre">MediaBuilder.metadata</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-revlens.media.builder.session_builder">revlens.media.builder.session_builder module</a><ul>
+<li><a class="reference internal" href="#revlens.media.builder.session_builder.SessionBuilder"><code class="docutils literal notranslate"><span class="pre">SessionBuilder</span></code></a><ul>
+<li><a class="reference internal" href="#revlens.media.builder.session_builder.SessionBuilder.add_media"><code class="docutils literal notranslate"><span class="pre">SessionBuilder.add_media()</span></code></a></li>
+<li><a class="reference internal" href="#revlens.media.builder.session_builder.SessionBuilder.build_annotation_track"><code class="docutils literal notranslate"><span class="pre">SessionBuilder.build_annotation_track()</span></code></a></li>
+<li><a class="reference internal" href="#revlens.media.builder.session_builder.SessionBuilder.build_media_track"><code class="docutils literal notranslate"><span class="pre">SessionBuilder.build_media_track()</span></code></a></li>
+<li><a class="reference internal" href="#revlens.media.builder.session_builder.SessionBuilder.build_track"><code class="docutils literal notranslate"><span class="pre">SessionBuilder.build_track()</span></code></a></li>
+<li><a class="reference internal" href="#revlens.media.builder.session_builder.SessionBuilder.sanitize_media"><code class="docutils literal notranslate"><span class="pre">SessionBuilder.sanitize_media()</span></code></a></li>
+<li><a class="reference internal" href="#revlens.media.builder.session_builder.SessionBuilder.sanitize_session"><code class="docutils literal notranslate"><span class="pre">SessionBuilder.sanitize_session()</span></code></a></li>
+<li><a class="reference internal" href="#revlens.media.builder.session_builder.SessionBuilder.sanitize_track"><code class="docutils literal notranslate"><span class="pre">SessionBuilder.sanitize_track()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#revlens.media.builder.session_builder.SessionIO"><code class="docutils literal notranslate"><span class="pre">SessionIO</span></code></a><ul>
+<li><a class="reference internal" href="#revlens.media.builder.session_builder.SessionIO.add_track"><code class="docutils literal notranslate"><span class="pre">SessionIO.add_track()</span></code></a></li>
+<li><a class="reference internal" href="#revlens.media.builder.session_builder.SessionIO.flush"><code class="docutils literal notranslate"><span class="pre">SessionIO.flush()</span></code></a></li>
+<li><a class="reference internal" href="#revlens.media.builder.session_builder.SessionIO.raw_add_media_to_track"><code class="docutils literal notranslate"><span class="pre">SessionIO.raw_add_media_to_track()</span></code></a></li>
+<li><a class="reference internal" href="#revlens.media.builder.session_builder.SessionIO.raw_add_track"><code class="docutils literal notranslate"><span class="pre">SessionIO.raw_add_track()</span></code></a></li>
+<li><a class="reference internal" href="#revlens.media.builder.session_builder.SessionIO.raw_delete_track"><code class="docutils literal notranslate"><span class="pre">SessionIO.raw_delete_track()</span></code></a></li>
+<li><a class="reference internal" href="#revlens.media.builder.session_builder.SessionIO.raw_remove_media"><code class="docutils literal notranslate"><span class="pre">SessionIO.raw_remove_media()</span></code></a></li>
+<li><a class="reference internal" href="#revlens.media.builder.session_builder.SessionIO.raw_update_media_property"><code class="docutils literal notranslate"><span class="pre">SessionIO.raw_update_media_property()</span></code></a></li>
+<li><a class="reference internal" href="#revlens.media.builder.session_builder.SessionIO.raw_update_track"><code class="docutils literal notranslate"><span class="pre">SessionIO.raw_update_track()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#revlens.media.builder.session_builder.SingleFileSessionIO"><code class="docutils literal notranslate"><span class="pre">SingleFileSessionIO</span></code></a><ul>
+<li><a class="reference internal" href="#revlens.media.builder.session_builder.SingleFileSessionIO.read"><code class="docutils literal notranslate"><span class="pre">SingleFileSessionIO.read()</span></code></a></li>
+<li><a class="reference internal" href="#revlens.media.builder.session_builder.SingleFileSessionIO.write"><code class="docutils literal notranslate"><span class="pre">SingleFileSessionIO.write()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#revlens.media.builder.session_builder.SplitFileSessionIO"><code class="docutils literal notranslate"><span class="pre">SplitFileSessionIO</span></code></a><ul>
+<li><a class="reference internal" href="#revlens.media.builder.session_builder.SplitFileSessionIO.clean_annotations"><code class="docutils literal notranslate"><span class="pre">SplitFileSessionIO.clean_annotations()</span></code></a></li>
+<li><a class="reference internal" href="#revlens.media.builder.session_builder.SplitFileSessionIO.flush"><code class="docutils literal notranslate"><span class="pre">SplitFileSessionIO.flush()</span></code></a></li>
+<li><a class="reference internal" href="#revlens.media.builder.session_builder.SplitFileSessionIO.read"><code class="docutils literal notranslate"><span class="pre">SplitFileSessionIO.read()</span></code></a></li>
+<li><a class="reference internal" href="#revlens.media.builder.session_builder.SplitFileSessionIO.update_track"><code class="docutils literal notranslate"><span class="pre">SplitFileSessionIO.update_track()</span></code></a></li>
+<li><a class="reference internal" href="#revlens.media.builder.session_builder.SplitFileSessionIO.write"><code class="docutils literal notranslate"><span class="pre">SplitFileSessionIO.write()</span></code></a></li>
+<li><a class="reference internal" href="#revlens.media.builder.session_builder.SplitFileSessionIO.write_annotation_track"><code class="docutils literal notranslate"><span class="pre">SplitFileSessionIO.write_annotation_track()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-revlens.media.builder">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">revlens</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">revlens.media.builder package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/revlens.media.builder.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="revlens-media-builder-package">
+<h1>revlens.media.builder package<a class="headerlink" href="#revlens-media-builder-package" title="Link to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-revlens.media.builder.media_builder">
+<span id="revlens-media-builder-media-builder-module"></span><h2>revlens.media.builder.media_builder module<a class="headerlink" href="#module-revlens.media.builder.media_builder" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="revlens.media.builder.media_builder.MediaBuilder">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">revlens.media.builder.media_builder.</span></span><span class="sig-name descname"><span class="pre">MediaBuilder</span></span><a class="headerlink" href="#revlens.media.builder.media_builder.MediaBuilder" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Utility class for building a usable media payload</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="revlens.media.builder.media_builder.MediaBuilder.add_audio_component">
+<span class="sig-name descname"><span class="pre">add_audio_component</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">component_type_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#revlens.media.builder.media_builder.MediaBuilder.add_audio_component" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="revlens.media.builder.media_builder.MediaBuilder.add_audio_component_info">
+<span class="sig-name descname"><span class="pre">add_audio_component_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">component_type_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">info_key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#revlens.media.builder.media_builder.MediaBuilder.add_audio_component_info" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="revlens.media.builder.media_builder.MediaBuilder.add_thumbnail_component">
+<span class="sig-name descname"><span class="pre">add_thumbnail_component</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">thumb_data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#revlens.media.builder.media_builder.MediaBuilder.add_thumbnail_component" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="revlens.media.builder.media_builder.MediaBuilder.add_video_component">
+<span class="sig-name descname"><span class="pre">add_video_component</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">component_type_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#revlens.media.builder.media_builder.MediaBuilder.add_video_component" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="revlens.media.builder.media_builder.MediaBuilder.add_video_component_info">
+<span class="sig-name descname"><span class="pre">add_video_component_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">component_type_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">info_key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#revlens.media.builder.media_builder.MediaBuilder.add_video_component_info" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="revlens.media.builder.media_builder.MediaBuilder.metadata">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">metadata</span></span><a class="headerlink" href="#revlens.media.builder.media_builder.MediaBuilder.metadata" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-revlens.media.builder.session_builder">
+<span id="revlens-media-builder-session-builder-module"></span><h2>revlens.media.builder.session_builder module<a class="headerlink" href="#module-revlens.media.builder.session_builder" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="revlens.media.builder.session_builder.SessionBuilder">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">revlens.media.builder.session_builder.</span></span><span class="sig-name descname"><span class="pre">SessionBuilder</span></span><a class="headerlink" href="#revlens.media.builder.session_builder.SessionBuilder" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A standalone revlens session builder utility class that returns data objects
+without storing any state</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="revlens.media.builder.session_builder.SessionBuilder.add_media">
+<span class="sig-name descname"><span class="pre">add_media</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">track</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">media_info</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">uuid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#revlens.media.builder.session_builder.SessionBuilder.add_media" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="revlens.media.builder.session_builder.SessionBuilder.build_annotation_track">
+<span class="sig-name descname"><span class="pre">build_annotation_track</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">track_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idx</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#revlens.media.builder.session_builder.SessionBuilder.build_annotation_track" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="revlens.media.builder.session_builder.SessionBuilder.build_media_track">
+<span class="sig-name descname"><span class="pre">build_media_track</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">track_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">owner</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'unknown'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#revlens.media.builder.session_builder.SessionBuilder.build_media_track" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="revlens.media.builder.session_builder.SessionBuilder.build_track">
+<span class="sig-name descname"><span class="pre">build_track</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">track_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">track_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">owner</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'unknown'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#revlens.media.builder.session_builder.SessionBuilder.build_track" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="revlens.media.builder.session_builder.SessionBuilder.sanitize_media">
+<span class="sig-name descname"><span class="pre">sanitize_media</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">media_in</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#revlens.media.builder.session_builder.SessionBuilder.sanitize_media" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="revlens.media.builder.session_builder.SessionBuilder.sanitize_session">
+<span class="sig-name descname"><span class="pre">sanitize_session</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session_in</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#revlens.media.builder.session_builder.SessionBuilder.sanitize_session" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="revlens.media.builder.session_builder.SessionBuilder.sanitize_track">
+<span class="sig-name descname"><span class="pre">sanitize_track</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">track_in</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#revlens.media.builder.session_builder.SessionBuilder.sanitize_track" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="revlens.media.builder.session_builder.SessionIO">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">revlens.media.builder.session_builder.</span></span><span class="sig-name descname"><span class="pre">SessionIO</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">builder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#revlens.media.builder.session_builder.SessionIO" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>pure python Session data object for compiling a session</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="revlens.media.builder.session_builder.SessionIO.add_track">
+<span class="sig-name descname"><span class="pre">add_track</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">track_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">track_idx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">track_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Default'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">owner</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'unknown'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#revlens.media.builder.session_builder.SessionIO.add_track" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="revlens.media.builder.session_builder.SessionIO.flush">
+<span class="sig-name descname"><span class="pre">flush</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">write_annotations</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#revlens.media.builder.session_builder.SessionIO.flush" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="revlens.media.builder.session_builder.SessionIO.raw_add_media_to_track">
+<span class="sig-name descname"><span class="pre">raw_add_media_to_track</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_media_info</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#revlens.media.builder.session_builder.SessionIO.raw_add_media_to_track" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="revlens.media.builder.session_builder.SessionIO.raw_add_track">
+<span class="sig-name descname"><span class="pre">raw_add_track</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">track_data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#revlens.media.builder.session_builder.SessionIO.raw_add_track" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="revlens.media.builder.session_builder.SessionIO.raw_delete_track">
+<span class="sig-name descname"><span class="pre">raw_delete_track</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">track_uuid</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#revlens.media.builder.session_builder.SessionIO.raw_delete_track" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="revlens.media.builder.session_builder.SessionIO.raw_remove_media">
+<span class="sig-name descname"><span class="pre">raw_remove_media</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">track_uuid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">media_uuid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#revlens.media.builder.session_builder.SessionIO.raw_remove_media" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="revlens.media.builder.session_builder.SessionIO.raw_update_media_property">
+<span class="sig-name descname"><span class="pre">raw_update_media_property</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">track_uuid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">media_uuid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prop_key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prop_val</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#revlens.media.builder.session_builder.SessionIO.raw_update_media_property" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="revlens.media.builder.session_builder.SessionIO.raw_update_track">
+<span class="sig-name descname"><span class="pre">raw_update_track</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">track_uuid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">track_data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#revlens.media.builder.session_builder.SessionIO.raw_update_track" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="revlens.media.builder.session_builder.SingleFileSessionIO">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">revlens.media.builder.session_builder.</span></span><span class="sig-name descname"><span class="pre">SingleFileSessionIO</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">builder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#revlens.media.builder.session_builder.SingleFileSessionIO" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#revlens.media.builder.session_builder.SessionIO" title="revlens.media.builder.session_builder.SessionIO"><code class="xref py py-class docutils literal notranslate"><span class="pre">SessionIO</span></code></a></p>
+<p>A writer to serialize a session into a single file</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="revlens.media.builder.session_builder.SingleFileSessionIO.read">
+<span class="sig-name descname"><span class="pre">read</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#revlens.media.builder.session_builder.SingleFileSessionIO.read" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="revlens.media.builder.session_builder.SingleFileSessionIO.write">
+<span class="sig-name descname"><span class="pre">write</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#revlens.media.builder.session_builder.SingleFileSessionIO.write" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="revlens.media.builder.session_builder.SplitFileSessionIO">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">revlens.media.builder.session_builder.</span></span><span class="sig-name descname"><span class="pre">SplitFileSessionIO</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">builder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#revlens.media.builder.session_builder.SplitFileSessionIO" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#revlens.media.builder.session_builder.SessionIO" title="revlens.media.builder.session_builder.SessionIO"><code class="xref py py-class docutils literal notranslate"><span class="pre">SessionIO</span></code></a></p>
+<p>A writer to serialize a session inside a directory structure, with
+annotations saved to separate files</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="revlens.media.builder.session_builder.SplitFileSessionIO.clean_annotations">
+<span class="sig-name descname"><span class="pre">clean_annotations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir_root</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#revlens.media.builder.session_builder.SplitFileSessionIO.clean_annotations" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="revlens.media.builder.session_builder.SplitFileSessionIO.flush">
+<span class="sig-name descname"><span class="pre">flush</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">write_annotations</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#revlens.media.builder.session_builder.SplitFileSessionIO.flush" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="revlens.media.builder.session_builder.SplitFileSessionIO.read">
+<span class="sig-name descname"><span class="pre">read</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dir_root</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#revlens.media.builder.session_builder.SplitFileSessionIO.read" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="revlens.media.builder.session_builder.SplitFileSessionIO.update_track">
+<span class="sig-name descname"><span class="pre">update_track</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">track_uuid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">track_data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#revlens.media.builder.session_builder.SplitFileSessionIO.update_track" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="revlens.media.builder.session_builder.SplitFileSessionIO.write">
+<span class="sig-name descname"><span class="pre">write</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dir_root</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">write_annotations</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#revlens.media.builder.session_builder.SplitFileSessionIO.write" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="revlens.media.builder.session_builder.SplitFileSessionIO.write_annotation_track">
+<span class="sig-name descname"><span class="pre">write_annotation_track</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir_root</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">track_data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#revlens.media.builder.session_builder.SplitFileSessionIO.write_annotation_track" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-revlens.media.builder">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-revlens.media.builder" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Justin Ottley.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>revlens package &mdash; revlens 23.11.20 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=9cbcb6cc"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            revlens
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">revlens package</a><ul>
+<li><a class="reference internal" href="#module-revlens">Module contents</a><ul>
+<li><a class="reference internal" href="#revlens.init_standalone_gui"><code class="docutils literal notranslate"><span class="pre">init_standalone_gui()</span></code></a></li>
+<li><a class="reference internal" href="#revlens.startup"><code class="docutils literal notranslate"><span class="pre">startup()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#subpackages">Subpackages</a></li>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-revlens.cmds">revlens.cmds module</a><ul>
+<li><a class="reference internal" href="#revlens.cmds.clear_in_out_frames"><code class="docutils literal notranslate"><span class="pre">clear_in_out_frames()</span></code></a></li>
+<li><a class="reference internal" href="#revlens.cmds.displayMessage"><code class="docutils literal notranslate"><span class="pre">displayMessage()</span></code></a></li>
+<li><a class="reference internal" href="#revlens.cmds.exit_presentation_mode"><code class="docutils literal notranslate"><span class="pre">exit_presentation_mode()</span></code></a></li>
+<li><a class="reference internal" href="#revlens.cmds.export"><code class="docutils literal notranslate"><span class="pre">export()</span></code></a></li>
+<li><a class="reference internal" href="#revlens.cmds.force_quit"><code class="docutils literal notranslate"><span class="pre">force_quit()</span></code></a></li>
+<li><a class="reference internal" href="#revlens.cmds.get_current_frame_num"><code class="docutils literal notranslate"><span class="pre">get_current_frame_num()</span></code></a></li>
+<li><a class="reference internal" href="#revlens.cmds.get_track_names"><code class="docutils literal notranslate"><span class="pre">get_track_names()</span></code></a></li>
+<li><a class="reference internal" href="#revlens.cmds.goto_frame"><code class="docutils literal notranslate"><span class="pre">goto_frame()</span></code></a></li>
+<li><a class="reference internal" href="#revlens.cmds.identify_media"><code class="docutils literal notranslate"><span class="pre">identify_media()</span></code></a></li>
+<li><a class="reference internal" href="#revlens.cmds.insert_media_at_frame"><code class="docutils literal notranslate"><span class="pre">insert_media_at_frame()</span></code></a></li>
+<li><a class="reference internal" href="#revlens.cmds.load_media_list"><code class="docutils literal notranslate"><span class="pre">load_media_list()</span></code></a></li>
+<li><a class="reference internal" href="#revlens.cmds.set_in_frame"><code class="docutils literal notranslate"><span class="pre">set_in_frame()</span></code></a></li>
+<li><a class="reference internal" href="#revlens.cmds.set_out_frame"><code class="docutils literal notranslate"><span class="pre">set_out_frame()</span></code></a></li>
+<li><a class="reference internal" href="#revlens.cmds.toggle_play_pause"><code class="docutils literal notranslate"><span class="pre">toggle_play_pause()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-revlens.plugin">revlens.plugin module</a><ul>
+<li><a class="reference internal" href="#revlens.plugin.register"><code class="docutils literal notranslate"><span class="pre">register()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">revlens</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">revlens package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/revlens.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="revlens-package">
+<h1>revlens package<a class="headerlink" href="#revlens-package" title="Link to this heading"></a></h1>
+<section id="module-revlens">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-revlens" title="Link to this heading"></a></h2>
+<p>Copyright (c) 2014-2019 Justin Ottley. All rights reserved.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="revlens.init_standalone_gui">
+<span class="sig-prename descclassname"><span class="pre">revlens.</span></span><span class="sig-name descname"><span class="pre">init_standalone_gui</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#revlens.init_standalone_gui" title="Link to this definition"></a></dt>
+<dd><p>TODO FIXME: UNUSED REMOVE?</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="revlens.startup">
+<span class="sig-prename descclassname"><span class="pre">revlens.</span></span><span class="sig-name descname"><span class="pre">startup</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#revlens.startup" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="revlens.gui.html">revlens.gui package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="revlens.gui.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="revlens.gui.arrangement.html">revlens.gui.arrangement package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="revlens.gui.arrangement.html#module-revlens.gui.arrangement">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="revlens.gui.dialogs.html">revlens.gui.dialogs package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="revlens.gui.dialogs.html#module-revlens.gui.dialogs">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="revlens.gui.timeline.html">revlens.gui.timeline package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="revlens.gui.timeline.html#module-revlens.gui.timeline">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="revlens.gui.html#module-revlens.gui">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="revlens.gui.html#revlens.gui.add_media_track"><code class="docutils literal notranslate"><span class="pre">add_media_track()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="revlens.gui.html#revlens.gui.clear_session"><code class="docutils literal notranslate"><span class="pre">clear_session()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="revlens.gui.html#revlens.gui.export_session"><code class="docutils literal notranslate"><span class="pre">export_session()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="revlens.gui.html#revlens.gui.goto_end"><code class="docutils literal notranslate"><span class="pre">goto_end()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="revlens.gui.html#revlens.gui.goto_start"><code class="docutils literal notranslate"><span class="pre">goto_start()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="revlens.gui.html#revlens.gui.init_gmenubar"><code class="docutils literal notranslate"><span class="pre">init_gmenubar()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="revlens.gui.html#revlens.gui.init_menus"><code class="docutils literal notranslate"><span class="pre">init_menus()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="revlens.gui.html#revlens.gui.load_session"><code class="docutils literal notranslate"><span class="pre">load_session()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="revlens.gui.html#revlens.gui.login_done"><code class="docutils literal notranslate"><span class="pre">login_done()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="revlens.gui.html#revlens.gui.on_layout_clear_triggered"><code class="docutils literal notranslate"><span class="pre">on_layout_clear_triggered()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="revlens.gui.html#revlens.gui.on_layout_load_triggered"><code class="docutils literal notranslate"><span class="pre">on_layout_load_triggered()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="revlens.gui.html#revlens.gui.on_new_window_requested"><code class="docutils literal notranslate"><span class="pre">on_new_window_requested()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="revlens.gui.html#revlens.gui.on_presentation_device_changed"><code class="docutils literal notranslate"><span class="pre">on_presentation_device_changed()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="revlens.gui.html#revlens.gui.on_toggle_splitter_autohide"><code class="docutils literal notranslate"><span class="pre">on_toggle_splitter_autohide()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="revlens.gui.html#revlens.gui.on_toggle_tab_headers"><code class="docutils literal notranslate"><span class="pre">on_toggle_tab_headers()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="revlens.gui.html#revlens.gui.on_triggered"><code class="docutils literal notranslate"><span class="pre">on_triggered()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="revlens.gui.html#revlens.gui.on_window_normal_requested"><code class="docutils literal notranslate"><span class="pre">on_window_normal_requested()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="revlens.gui.html#revlens.gui.on_window_presentation_mode_requested"><code class="docutils literal notranslate"><span class="pre">on_window_presentation_mode_requested()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="revlens.gui.html#revlens.gui.register_audio_mixer"><code class="docutils literal notranslate"><span class="pre">register_audio_mixer()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="revlens.gui.html#revlens.gui.run_quit"><code class="docutils literal notranslate"><span class="pre">run_quit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="revlens.gui.html#revlens.gui.save_session"><code class="docutils literal notranslate"><span class="pre">save_session()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="revlens.gui.html#revlens.gui.save_session_current"><code class="docutils literal notranslate"><span class="pre">save_session_current()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="revlens.gui.html#revlens.gui.save_window_state"><code class="docutils literal notranslate"><span class="pre">save_window_state()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="revlens.gui.html#revlens.gui.set_component_pref_exr"><code class="docutils literal notranslate"><span class="pre">set_component_pref_exr()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="revlens.gui.html#revlens.gui.set_component_pref_movie"><code class="docutils literal notranslate"><span class="pre">set_component_pref_movie()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="revlens.gui.html#revlens.gui.show_about"><code class="docutils literal notranslate"><span class="pre">show_about()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="revlens.gui.html#revlens.gui.show_plugin_ui"><code class="docutils literal notranslate"><span class="pre">show_plugin_ui()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="revlens.gui.html#revlens.gui.show_setup"><code class="docutils literal notranslate"><span class="pre">show_setup()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="revlens.gui.html#revlens.gui.startup"><code class="docutils literal notranslate"><span class="pre">startup()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="revlens.gui.html#revlens.gui.startup_timeline"><code class="docutils literal notranslate"><span class="pre">startup_timeline()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="revlens.keyboard.html">revlens.keyboard package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="revlens.keyboard.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="revlens.keyboard.html#module-revlens.keyboard.key_default">revlens.keyboard.key_default module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="revlens.keyboard.html#revlens.keyboard.key_default.register_keys"><code class="docutils literal notranslate"><span class="pre">register_keys()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="revlens.keyboard.html#module-revlens.keyboard">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="revlens.keyboard.html#revlens.keyboard.KeyBinding"><code class="docutils literal notranslate"><span class="pre">KeyBinding</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="revlens.keyboard.html#revlens.keyboard.KeyBinding.KEY_BINDINGS"><code class="docutils literal notranslate"><span class="pre">KeyBinding.KEY_BINDINGS</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="revlens.keyboard.html#revlens.keyboard.KeyBinding.register"><code class="docutils literal notranslate"><span class="pre">KeyBinding.register()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="revlens.keyboard.html#revlens.keyboard.KeyBinding.run"><code class="docutils literal notranslate"><span class="pre">KeyBinding.run()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="revlens.keyboard.html#revlens.keyboard.KeyEntry"><code class="docutils literal notranslate"><span class="pre">KeyEntry</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="revlens.keyboard.html#revlens.keyboard.KeyEntry.KEY_MAP"><code class="docutils literal notranslate"><span class="pre">KeyEntry.KEY_MAP</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="revlens.keyboard.html#revlens.keyboard.KeyEntry.OPSYS"><code class="docutils literal notranslate"><span class="pre">KeyEntry.OPSYS</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="revlens.keyboard.html#revlens.keyboard.KeyEntry.match"><code class="docutils literal notranslate"><span class="pre">KeyEntry.match()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="revlens.keyboard.html#revlens.keyboard.KeyEntry.register_key_entry"><code class="docutils literal notranslate"><span class="pre">KeyEntry.register_key_entry()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="revlens.keyboard.html#revlens.keyboard.KeyEntry.update"><code class="docutils literal notranslate"><span class="pre">KeyEntry.update()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="revlens.keyboard.html#revlens.keyboard.getKeystroke"><code class="docutils literal notranslate"><span class="pre">getKeystroke()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="revlens.keyboard.html#revlens.keyboard.handle_key_press_event"><code class="docutils literal notranslate"><span class="pre">handle_key_press_event()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="revlens.keyboard.html#revlens.keyboard.match"><code class="docutils literal notranslate"><span class="pre">match()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="revlens.keyboard.html#revlens.keyboard.register_key_binding"><code class="docutils literal notranslate"><span class="pre">register_key_binding()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="revlens.keyboard.html#revlens.keyboard.register_key_entry"><code class="docutils literal notranslate"><span class="pre">register_key_entry()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="revlens.media.html">revlens.media package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="revlens.media.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="revlens.media.builder.html">revlens.media.builder package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="revlens.media.builder.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="revlens.media.builder.html#module-revlens.media.builder.media_builder">revlens.media.builder.media_builder module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="revlens.media.builder.html#module-revlens.media.builder.session_builder">revlens.media.builder.session_builder module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="revlens.media.builder.html#module-revlens.media.builder">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="revlens.media.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="revlens.media.html#module-revlens.media.locator">revlens.media.locator module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="revlens.media.html#revlens.media.locator.MediaLocator"><code class="docutils literal notranslate"><span class="pre">MediaLocator</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="revlens.media.html#revlens.media.locator.MediaLocator.AUDIO_FORMATS"><code class="docutils literal notranslate"><span class="pre">MediaLocator.AUDIO_FORMATS</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="revlens.media.html#revlens.media.locator.MediaLocator.CONTAINER_FORMATS"><code class="docutils literal notranslate"><span class="pre">MediaLocator.CONTAINER_FORMATS</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="revlens.media.html#revlens.media.locator.MediaLocator.FRAME_FORMATS"><code class="docutils literal notranslate"><span class="pre">MediaLocator.FRAME_FORMATS</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="revlens.media.html#revlens.media.locator.MediaLocator.locate"><code class="docutils literal notranslate"><span class="pre">MediaLocator.locate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="revlens.media.html#revlens.media.locator.MediaLocator.media_factory"><code class="docutils literal notranslate"><span class="pre">MediaLocator.media_factory</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="revlens.media.html#revlens.media.locator.MediaLocator.resolve_components"><code class="docutils literal notranslate"><span class="pre">MediaLocator.resolve_components()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="revlens.media.html#revlens.media.locator.RemoteFileLocator"><code class="docutils literal notranslate"><span class="pre">RemoteFileLocator</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="revlens.media.html#revlens.media.locator.RemoteFileLocator.can_download"><code class="docutils literal notranslate"><span class="pre">RemoteFileLocator.can_download()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="revlens.media.html#revlens.media.locator.RemoteFileLocator.download_file"><code class="docutils literal notranslate"><span class="pre">RemoteFileLocator.download_file()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="revlens.media.html#revlens.media.locator.RemoteFileLocator.get_local_file_path"><code class="docutils literal notranslate"><span class="pre">RemoteFileLocator.get_local_file_path()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="revlens.media.html#module-revlens.media.translation_map">revlens.media.translation_map module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="revlens.media.html#module-revlens.media">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="revlens.media.html#revlens.media.append_to_composite"><code class="docutils literal notranslate"><span class="pre">append_to_composite()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="revlens.media.html#revlens.media.insert_media_at_frame"><code class="docutils literal notranslate"><span class="pre">insert_media_at_frame()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="revlens.media.html#revlens.media.locate"><code class="docutils literal notranslate"><span class="pre">locate()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="revlens.media.html#revlens.media.resolve_components"><code class="docutils literal notranslate"><span class="pre">resolve_components()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="revlens.media.html#revlens.media.sanitize_session"><code class="docutils literal notranslate"><span class="pre">sanitize_session()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="revlens.media.html#revlens.media.startup_load_media"><code class="docutils literal notranslate"><span class="pre">startup_load_media()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-revlens.cmds">
+<span id="revlens-cmds-module"></span><span id="revlens-cmds"></span><h2>revlens.cmds module<a class="headerlink" href="#module-revlens.cmds" title="Link to this heading"></a></h2>
+<p>Copyright (c) 2014-2019 Justin Ottley. All rights reserved.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="revlens.cmds.clear_in_out_frames">
+<span class="sig-prename descclassname"><span class="pre">revlens.cmds.</span></span><span class="sig-name descname"><span class="pre">clear_in_out_frames</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#revlens.cmds.clear_in_out_frames" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="revlens.cmds.displayMessage">
+<span class="sig-prename descclassname"><span class="pre">revlens.cmds.</span></span><span class="sig-name descname"><span class="pre">displayMessage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#revlens.cmds.displayMessage" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="revlens.cmds.exit_presentation_mode">
+<span class="sig-prename descclassname"><span class="pre">revlens.cmds.</span></span><span class="sig-name descname"><span class="pre">exit_presentation_mode</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#revlens.cmds.exit_presentation_mode" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="revlens.cmds.export">
+<span class="sig-prename descclassname"><span class="pre">revlens.cmds.</span></span><span class="sig-name descname"><span class="pre">export</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start_frame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_frame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_height</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame_format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'png'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame_prefix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'export'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'mov'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">create_edb_media</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">media_title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Export</span> <span class="pre">Media'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comment</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#revlens.cmds.export" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="revlens.cmds.force_quit">
+<span class="sig-prename descclassname"><span class="pre">revlens.cmds.</span></span><span class="sig-name descname"><span class="pre">force_quit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#revlens.cmds.force_quit" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="revlens.cmds.get_current_frame_num">
+<span class="sig-prename descclassname"><span class="pre">revlens.cmds.</span></span><span class="sig-name descname"><span class="pre">get_current_frame_num</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#revlens.cmds.get_current_frame_num" title="Link to this definition"></a></dt>
+<dd><p>Get the current frame number</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="revlens.cmds.get_track_names">
+<span class="sig-prename descclassname"><span class="pre">revlens.cmds.</span></span><span class="sig-name descname"><span class="pre">get_track_names</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">track_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#revlens.cmds.get_track_names" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="revlens.cmds.goto_frame">
+<span class="sig-prename descclassname"><span class="pre">revlens.cmds.</span></span><span class="sig-name descname"><span class="pre">goto_frame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frameNum</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recenter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">schedule</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">emitAction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#revlens.cmds.goto_frame" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="revlens.cmds.identify_media">
+<span class="sig-prename descclassname"><span class="pre">revlens.cmds.</span></span><span class="sig-name descname"><span class="pre">identify_media</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">media_in</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#revlens.cmds.identify_media" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="revlens.cmds.insert_media_at_frame">
+<span class="sig-prename descclassname"><span class="pre">revlens.cmds.</span></span><span class="sig-name descname"><span class="pre">insert_media_at_frame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">media_in</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">track_idx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame_num</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">identify</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#revlens.cmds.insert_media_at_frame" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="revlens.cmds.load_media_list">
+<span class="sig-prename descclassname"><span class="pre">revlens.cmds.</span></span><span class="sig-name descname"><span class="pre">load_media_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">media_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">track_idx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_frame</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clear</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#revlens.cmds.load_media_list" title="Link to this definition"></a></dt>
+<dd><p>Main entry point for loading media into revlens.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="revlens.cmds.set_in_frame">
+<span class="sig-prename descclassname"><span class="pre">revlens.cmds.</span></span><span class="sig-name descname"><span class="pre">set_in_frame</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#revlens.cmds.set_in_frame" title="Link to this definition"></a></dt>
+<dd><p>Set global timeline in frame at current timeline mouse position</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="revlens.cmds.set_out_frame">
+<span class="sig-prename descclassname"><span class="pre">revlens.cmds.</span></span><span class="sig-name descname"><span class="pre">set_out_frame</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#revlens.cmds.set_out_frame" title="Link to this definition"></a></dt>
+<dd><p>Set global timeline out frame at current timeline mouse position</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="revlens.cmds.toggle_play_pause">
+<span class="sig-prename descclassname"><span class="pre">revlens.cmds.</span></span><span class="sig-name descname"><span class="pre">toggle_play_pause</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#revlens.cmds.toggle_play_pause" title="Link to this definition"></a></dt>
+<dd><p>Toggle play state</p>
+</dd></dl>
+
+</section>
+<section id="module-revlens.plugin">
+<span id="revlens-plugin-module"></span><h2>revlens.plugin module<a class="headerlink" href="#module-revlens.plugin" title="Link to this heading"></a></h2>
+<p>Copyright (c) 2014-2019 Justin Ottley. All rights reserved.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="revlens.plugin.register">
+<span class="sig-prename descclassname"><span class="pre">revlens.plugin.</span></span><span class="sig-name descname"><span class="pre">register</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">plugin_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plugin_item</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#revlens.plugin.register" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Justin Ottley.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

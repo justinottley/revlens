@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RlpRevlensDISPmodule module &mdash; revlens 23.11.20 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=9cbcb6cc"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            revlens
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">RlpRevlensDISPmodule module</a><ul>
+<li><a class="reference internal" href="#RlpRevlensDISPmodule.DISP_GLPaintEngine2D"><code class="docutils literal notranslate"><span class="pre">DISP_GLPaintEngine2D</span></code></a><ul>
+<li><a class="reference internal" href="#RlpRevlensDISPmodule.DISP_GLPaintEngine2D.displayZoomChanged"><code class="docutils literal notranslate"><span class="pre">DISP_GLPaintEngine2D.displayZoomChanged</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDISPmodule.DISP_GLPaintEngine2D.getPanPercent"><code class="docutils literal notranslate"><span class="pre">DISP_GLPaintEngine2D.getPanPercent()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDISPmodule.DISP_GLPaintEngine2D.getZoom"><code class="docutils literal notranslate"><span class="pre">DISP_GLPaintEngine2D.getZoom()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDISPmodule.DISP_GLPaintEngine2D.mapToImage"><code class="docutils literal notranslate"><span class="pre">DISP_GLPaintEngine2D.mapToImage()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDISPmodule.DISP_GLPaintEngine2D.metadata"><code class="docutils literal notranslate"><span class="pre">DISP_GLPaintEngine2D.metadata()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDISPmodule.DISP_GLPaintEngine2D.resetPan"><code class="docutils literal notranslate"><span class="pre">DISP_GLPaintEngine2D.resetPan()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDISPmodule.DISP_GLPaintEngine2D.resetZoom"><code class="docutils literal notranslate"><span class="pre">DISP_GLPaintEngine2D.resetZoom()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDISPmodule.DISP_GLPaintEngine2D.setPanEnd"><code class="docutils literal notranslate"><span class="pre">DISP_GLPaintEngine2D.setPanEnd()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDISPmodule.DISP_GLPaintEngine2D.setPanPos"><code class="docutils literal notranslate"><span class="pre">DISP_GLPaintEngine2D.setPanPos()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDISPmodule.DISP_GLPaintEngine2D.setPanZoomEnd"><code class="docutils literal notranslate"><span class="pre">DISP_GLPaintEngine2D.setPanZoomEnd()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDISPmodule.DISP_GLPaintEngine2D.setZoomEnd"><code class="docutils literal notranslate"><span class="pre">DISP_GLPaintEngine2D.setZoomEnd()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDISPmodule.DISP_GLPaintEngine2D.setZoomPos"><code class="docutils literal notranslate"><span class="pre">DISP_GLPaintEngine2D.setZoomPos()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#RlpRevlensDISPmodule.DISP_GLView"><code class="docutils literal notranslate"><span class="pre">DISP_GLView</span></code></a><ul>
+<li><a class="reference internal" href="#RlpRevlensDISPmodule.DISP_GLView.contextMenu"><code class="docutils literal notranslate"><span class="pre">DISP_GLView.contextMenu()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDISPmodule.DISP_GLView.displayDestroyed"><code class="docutils literal notranslate"><span class="pre">DISP_GLView.displayDestroyed</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDISPmodule.DISP_GLView.displayZoomChanged"><code class="docutils literal notranslate"><span class="pre">DISP_GLView.displayZoomChanged</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDISPmodule.DISP_GLView.getCurrentPaintEngine"><code class="docutils literal notranslate"><span class="pre">DISP_GLView.getCurrentPaintEngine()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDISPmodule.DISP_GLView.getFpsAvg"><code class="docutils literal notranslate"><span class="pre">DISP_GLView.getFpsAvg()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDISPmodule.DISP_GLView.getOrInitPaintEngine"><code class="docutils literal notranslate"><span class="pre">DISP_GLView.getOrInitPaintEngine()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDISPmodule.DISP_GLView.getPanPercent"><code class="docutils literal notranslate"><span class="pre">DISP_GLView.getPanPercent()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDISPmodule.DISP_GLView.getZoom"><code class="docutils literal notranslate"><span class="pre">DISP_GLView.getZoom()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDISPmodule.DISP_GLView.grabImage"><code class="docutils literal notranslate"><span class="pre">DISP_GLView.grabImage()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDISPmodule.DISP_GLView.grabImageReady"><code class="docutils literal notranslate"><span class="pre">DISP_GLView.grabImageReady</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDISPmodule.DISP_GLView.hoverEnter"><code class="docutils literal notranslate"><span class="pre">DISP_GLView.hoverEnter</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDISPmodule.DISP_GLView.hoverLeave"><code class="docutils literal notranslate"><span class="pre">DISP_GLView.hoverLeave</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDISPmodule.DISP_GLView.hoverMove"><code class="docutils literal notranslate"><span class="pre">DISP_GLView.hoverMove</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDISPmodule.DISP_GLView.onPaintEngineDisplayZoomChanged"><code class="docutils literal notranslate"><span class="pre">DISP_GLView.onPaintEngineDisplayZoomChanged()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDISPmodule.DISP_GLView.onPanZoomEnd"><code class="docutils literal notranslate"><span class="pre">DISP_GLView.onPanZoomEnd</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDISPmodule.DISP_GLView.onParentSizeChanged"><code class="docutils literal notranslate"><span class="pre">DISP_GLView.onParentSizeChanged()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDISPmodule.DISP_GLView.paintEngineCreated"><code class="docutils literal notranslate"><span class="pre">DISP_GLView.paintEngineCreated</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDISPmodule.DISP_GLView.panPosChanged"><code class="docutils literal notranslate"><span class="pre">DISP_GLView.panPosChanged</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDISPmodule.DISP_GLView.registerEventPlugin"><code class="docutils literal notranslate"><span class="pre">DISP_GLView.registerEventPlugin()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDISPmodule.DISP_GLView.resetSoloPlugin"><code class="docutils literal notranslate"><span class="pre">DISP_GLView.resetSoloPlugin()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDISPmodule.DISP_GLView.setCurrentPaintEngine"><code class="docutils literal notranslate"><span class="pre">DISP_GLView.setCurrentPaintEngine()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDISPmodule.DISP_GLView.setPanPos"><code class="docutils literal notranslate"><span class="pre">DISP_GLView.setPanPos()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDISPmodule.DISP_GLView.setSoloPluginByIdx"><code class="docutils literal notranslate"><span class="pre">DISP_GLView.setSoloPluginByIdx()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDISPmodule.DISP_GLView.setSoloPluginByName"><code class="docutils literal notranslate"><span class="pre">DISP_GLView.setSoloPluginByName()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDISPmodule.DISP_GLView.uuid"><code class="docutils literal notranslate"><span class="pre">DISP_GLView.uuid()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDISPmodule.DISP_GLView.zoomPosChanged"><code class="docutils literal notranslate"><span class="pre">DISP_GLView.zoomPosChanged</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#RlpRevlensDISPmodule.init_module"><code class="docutils literal notranslate"><span class="pre">init_module()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">revlens</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">RlpRevlensDISPmodule module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/RlpRevlensDISPmodule.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-RlpRevlensDISPmodule">
+<span id="rlprevlensdispmodule-module"></span><h1>RlpRevlensDISPmodule module<a class="headerlink" href="#module-RlpRevlensDISPmodule" title="Link to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="RlpRevlensDISPmodule.DISP_GLPaintEngine2D">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">RlpRevlensDISPmodule.</span></span><span class="sig-name descname"><span class="pre">DISP_GLPaintEngine2D</span></span><a class="headerlink" href="#RlpRevlensDISPmodule.DISP_GLPaintEngine2D" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_object</span></code></p>
+<dl class="py property">
+<dt class="sig sig-object py" id="RlpRevlensDISPmodule.DISP_GLPaintEngine2D.displayZoomChanged">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">displayZoomChanged</span></span><a class="headerlink" href="#RlpRevlensDISPmodule.DISP_GLPaintEngine2D.displayZoomChanged" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDISPmodule.DISP_GLPaintEngine2D.getPanPercent">
+<span class="sig-name descname"><span class="pre">getPanPercent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDISPmodule.DISP_GLPaintEngine2D" title="RlpRevlensDISPmodule.DISP_GLPaintEngine2D"><span class="pre">RlpRevlensDISPmodule.DISP_GLPaintEngine2D</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">RlpCoreQTCORE.QPointF</span></span></span><a class="headerlink" href="#RlpRevlensDISPmodule.DISP_GLPaintEngine2D.getPanPercent" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDISPmodule.DISP_GLPaintEngine2D.getZoom">
+<span class="sig-name descname"><span class="pre">getZoom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDISPmodule.DISP_GLPaintEngine2D" title="RlpRevlensDISPmodule.DISP_GLPaintEngine2D"><span class="pre">RlpRevlensDISPmodule.DISP_GLPaintEngine2D</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#RlpRevlensDISPmodule.DISP_GLPaintEngine2D.getZoom" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDISPmodule.DISP_GLPaintEngine2D.mapToImage">
+<span class="sig-name descname"><span class="pre">mapToImage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDISPmodule.DISP_GLPaintEngine2D" title="RlpRevlensDISPmodule.DISP_GLPaintEngine2D"><span class="pre">RlpRevlensDISPmodule.DISP_GLPaintEngine2D</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">RlpCoreQTCORE.QPointF</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">RlpCoreQTCORE.QPointF</span></span></span><a class="headerlink" href="#RlpRevlensDISPmodule.DISP_GLPaintEngine2D.mapToImage" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDISPmodule.DISP_GLPaintEngine2D.metadata">
+<span class="sig-name descname"><span class="pre">metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDISPmodule.DISP_GLPaintEngine2D" title="RlpRevlensDISPmodule.DISP_GLPaintEngine2D"><span class="pre">RlpRevlensDISPmodule.DISP_GLPaintEngine2D</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#RlpRevlensDISPmodule.DISP_GLPaintEngine2D.metadata" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDISPmodule.DISP_GLPaintEngine2D.resetPan">
+<span class="sig-name descname"><span class="pre">resetPan</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDISPmodule.DISP_GLPaintEngine2D" title="RlpRevlensDISPmodule.DISP_GLPaintEngine2D"><span class="pre">RlpRevlensDISPmodule.DISP_GLPaintEngine2D</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensDISPmodule.DISP_GLPaintEngine2D.resetPan" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDISPmodule.DISP_GLPaintEngine2D.resetZoom">
+<span class="sig-name descname"><span class="pre">resetZoom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDISPmodule.DISP_GLPaintEngine2D" title="RlpRevlensDISPmodule.DISP_GLPaintEngine2D"><span class="pre">RlpRevlensDISPmodule.DISP_GLPaintEngine2D</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensDISPmodule.DISP_GLPaintEngine2D.resetZoom" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDISPmodule.DISP_GLPaintEngine2D.setPanEnd">
+<span class="sig-name descname"><span class="pre">setPanEnd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDISPmodule.DISP_GLPaintEngine2D" title="RlpRevlensDISPmodule.DISP_GLPaintEngine2D"><span class="pre">RlpRevlensDISPmodule.DISP_GLPaintEngine2D</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensDISPmodule.DISP_GLPaintEngine2D.setPanEnd" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDISPmodule.DISP_GLPaintEngine2D.setPanPos">
+<span class="sig-name descname"><span class="pre">setPanPos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDISPmodule.DISP_GLPaintEngine2D" title="RlpRevlensDISPmodule.DISP_GLPaintEngine2D"><span class="pre">RlpRevlensDISPmodule.DISP_GLPaintEngine2D</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">RlpCoreQTCORE.QPointF</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensDISPmodule.DISP_GLPaintEngine2D.setPanPos" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDISPmodule.DISP_GLPaintEngine2D.setPanZoomEnd">
+<span class="sig-name descname"><span class="pre">setPanZoomEnd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDISPmodule.DISP_GLPaintEngine2D" title="RlpRevlensDISPmodule.DISP_GLPaintEngine2D"><span class="pre">RlpRevlensDISPmodule.DISP_GLPaintEngine2D</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensDISPmodule.DISP_GLPaintEngine2D.setPanZoomEnd" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDISPmodule.DISP_GLPaintEngine2D.setZoomEnd">
+<span class="sig-name descname"><span class="pre">setZoomEnd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDISPmodule.DISP_GLPaintEngine2D" title="RlpRevlensDISPmodule.DISP_GLPaintEngine2D"><span class="pre">RlpRevlensDISPmodule.DISP_GLPaintEngine2D</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensDISPmodule.DISP_GLPaintEngine2D.setZoomEnd" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDISPmodule.DISP_GLPaintEngine2D.setZoomPos">
+<span class="sig-name descname"><span class="pre">setZoomPos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDISPmodule.DISP_GLPaintEngine2D" title="RlpRevlensDISPmodule.DISP_GLPaintEngine2D"><span class="pre">RlpRevlensDISPmodule.DISP_GLPaintEngine2D</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensDISPmodule.DISP_GLPaintEngine2D.setZoomPos" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="RlpRevlensDISPmodule.DISP_GLView">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">RlpRevlensDISPmodule.</span></span><span class="sig-name descname"><span class="pre">DISP_GLView</span></span><a class="headerlink" href="#RlpRevlensDISPmodule.DISP_GLView" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">GUI_ItemBase</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDISPmodule.DISP_GLView.contextMenu">
+<span class="sig-name descname"><span class="pre">contextMenu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDISPmodule.DISP_GLView" title="RlpRevlensDISPmodule.DISP_GLView"><span class="pre">RlpRevlensDISPmodule.DISP_GLView</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">RlpGuiMENUmodule.GUI_MenuPane</span></span></span><a class="headerlink" href="#RlpRevlensDISPmodule.DISP_GLView.contextMenu" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="RlpRevlensDISPmodule.DISP_GLView.displayDestroyed">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">displayDestroyed</span></span><a class="headerlink" href="#RlpRevlensDISPmodule.DISP_GLView.displayDestroyed" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="RlpRevlensDISPmodule.DISP_GLView.displayZoomChanged">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">displayZoomChanged</span></span><a class="headerlink" href="#RlpRevlensDISPmodule.DISP_GLView.displayZoomChanged" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDISPmodule.DISP_GLView.getCurrentPaintEngine">
+<span class="sig-name descname"><span class="pre">getCurrentPaintEngine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDISPmodule.DISP_GLView" title="RlpRevlensDISPmodule.DISP_GLView"><span class="pre">RlpRevlensDISPmodule.DISP_GLView</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#RlpRevlensDISPmodule.DISP_GLPaintEngine2D" title="RlpRevlensDISPmodule.DISP_GLPaintEngine2D"><span class="pre">RlpRevlensDISPmodule.DISP_GLPaintEngine2D</span></a></span></span><a class="headerlink" href="#RlpRevlensDISPmodule.DISP_GLView.getCurrentPaintEngine" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDISPmodule.DISP_GLView.getFpsAvg">
+<span class="sig-name descname"><span class="pre">getFpsAvg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDISPmodule.DISP_GLView" title="RlpRevlensDISPmodule.DISP_GLView"><span class="pre">RlpRevlensDISPmodule.DISP_GLView</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#RlpRevlensDISPmodule.DISP_GLView.getFpsAvg" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDISPmodule.DISP_GLView.getOrInitPaintEngine">
+<span class="sig-name descname"><span class="pre">getOrInitPaintEngine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDISPmodule.DISP_GLView" title="RlpRevlensDISPmodule.DISP_GLView"><span class="pre">RlpRevlensDISPmodule.DISP_GLView</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#RlpRevlensDISPmodule.DISP_GLPaintEngine2D" title="RlpRevlensDISPmodule.DISP_GLPaintEngine2D"><span class="pre">RlpRevlensDISPmodule.DISP_GLPaintEngine2D</span></a></span></span><a class="headerlink" href="#RlpRevlensDISPmodule.DISP_GLView.getOrInitPaintEngine" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDISPmodule.DISP_GLView.getPanPercent">
+<span class="sig-name descname"><span class="pre">getPanPercent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDISPmodule.DISP_GLView" title="RlpRevlensDISPmodule.DISP_GLView"><span class="pre">RlpRevlensDISPmodule.DISP_GLView</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">RlpCoreQTCORE.QPointF</span></span></span><a class="headerlink" href="#RlpRevlensDISPmodule.DISP_GLView.getPanPercent" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDISPmodule.DISP_GLView.getZoom">
+<span class="sig-name descname"><span class="pre">getZoom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDISPmodule.DISP_GLView" title="RlpRevlensDISPmodule.DISP_GLView"><span class="pre">RlpRevlensDISPmodule.DISP_GLView</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#RlpRevlensDISPmodule.DISP_GLView.getZoom" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDISPmodule.DISP_GLView.grabImage">
+<span class="sig-name descname"><span class="pre">grabImage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDISPmodule.DISP_GLView" title="RlpRevlensDISPmodule.DISP_GLView"><span class="pre">RlpRevlensDISPmodule.DISP_GLView</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensDISPmodule.DISP_GLView.grabImage" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="RlpRevlensDISPmodule.DISP_GLView.grabImageReady">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">grabImageReady</span></span><a class="headerlink" href="#RlpRevlensDISPmodule.DISP_GLView.grabImageReady" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="RlpRevlensDISPmodule.DISP_GLView.hoverEnter">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">hoverEnter</span></span><a class="headerlink" href="#RlpRevlensDISPmodule.DISP_GLView.hoverEnter" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="RlpRevlensDISPmodule.DISP_GLView.hoverLeave">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">hoverLeave</span></span><a class="headerlink" href="#RlpRevlensDISPmodule.DISP_GLView.hoverLeave" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="RlpRevlensDISPmodule.DISP_GLView.hoverMove">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">hoverMove</span></span><a class="headerlink" href="#RlpRevlensDISPmodule.DISP_GLView.hoverMove" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDISPmodule.DISP_GLView.onPaintEngineDisplayZoomChanged">
+<span class="sig-name descname"><span class="pre">onPaintEngineDisplayZoomChanged</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDISPmodule.DISP_GLView" title="RlpRevlensDISPmodule.DISP_GLView"><span class="pre">RlpRevlensDISPmodule.DISP_GLView</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensDISPmodule.DISP_GLView.onPaintEngineDisplayZoomChanged" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="RlpRevlensDISPmodule.DISP_GLView.onPanZoomEnd">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">onPanZoomEnd</span></span><a class="headerlink" href="#RlpRevlensDISPmodule.DISP_GLView.onPanZoomEnd" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDISPmodule.DISP_GLView.onParentSizeChanged">
+<span class="sig-name descname"><span class="pre">onParentSizeChanged</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDISPmodule.DISP_GLView" title="RlpRevlensDISPmodule.DISP_GLView"><span class="pre">RlpRevlensDISPmodule.DISP_GLView</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensDISPmodule.DISP_GLView.onParentSizeChanged" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="RlpRevlensDISPmodule.DISP_GLView.paintEngineCreated">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">paintEngineCreated</span></span><a class="headerlink" href="#RlpRevlensDISPmodule.DISP_GLView.paintEngineCreated" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="RlpRevlensDISPmodule.DISP_GLView.panPosChanged">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">panPosChanged</span></span><a class="headerlink" href="#RlpRevlensDISPmodule.DISP_GLView.panPosChanged" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDISPmodule.DISP_GLView.registerEventPlugin">
+<span class="sig-name descname"><span class="pre">registerEventPlugin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDISPmodule.DISP_GLView" title="RlpRevlensDISPmodule.DISP_GLView"><span class="pre">RlpRevlensDISPmodule.DISP_GLView</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="RlpRevlensDSmodule.html#RlpRevlensDSmodule.DS_EventPlugin" title="RlpRevlensDSmodule.DS_EventPlugin"><span class="pre">DS_EventPlugin</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#RlpRevlensDISPmodule.DISP_GLView.registerEventPlugin" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDISPmodule.DISP_GLView.resetSoloPlugin">
+<span class="sig-name descname"><span class="pre">resetSoloPlugin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDISPmodule.DISP_GLView" title="RlpRevlensDISPmodule.DISP_GLView"><span class="pre">RlpRevlensDISPmodule.DISP_GLView</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensDISPmodule.DISP_GLView.resetSoloPlugin" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDISPmodule.DISP_GLView.setCurrentPaintEngine">
+<span class="sig-name descname"><span class="pre">setCurrentPaintEngine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDISPmodule.DISP_GLView" title="RlpRevlensDISPmodule.DISP_GLView"><span class="pre">RlpRevlensDISPmodule.DISP_GLView</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensDISPmodule.DISP_GLView.setCurrentPaintEngine" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDISPmodule.DISP_GLView.setPanPos">
+<span class="sig-name descname"><span class="pre">setPanPos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDISPmodule.DISP_GLView" title="RlpRevlensDISPmodule.DISP_GLView"><span class="pre">RlpRevlensDISPmodule.DISP_GLView</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">RlpCoreQTCORE.QPointF</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensDISPmodule.DISP_GLView.setPanPos" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDISPmodule.DISP_GLView.setSoloPluginByIdx">
+<span class="sig-name descname"><span class="pre">setSoloPluginByIdx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDISPmodule.DISP_GLView" title="RlpRevlensDISPmodule.DISP_GLView"><span class="pre">RlpRevlensDISPmodule.DISP_GLView</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensDISPmodule.DISP_GLView.setSoloPluginByIdx" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDISPmodule.DISP_GLView.setSoloPluginByName">
+<span class="sig-name descname"><span class="pre">setSoloPluginByName</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDISPmodule.DISP_GLView" title="RlpRevlensDISPmodule.DISP_GLView"><span class="pre">RlpRevlensDISPmodule.DISP_GLView</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensDISPmodule.DISP_GLView.setSoloPluginByName" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDISPmodule.DISP_GLView.uuid">
+<span class="sig-name descname"><span class="pre">uuid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDISPmodule.DISP_GLView" title="RlpRevlensDISPmodule.DISP_GLView"><span class="pre">RlpRevlensDISPmodule.DISP_GLView</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#RlpRevlensDISPmodule.DISP_GLView.uuid" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="RlpRevlensDISPmodule.DISP_GLView.zoomPosChanged">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">zoomPosChanged</span></span><a class="headerlink" href="#RlpRevlensDISPmodule.DISP_GLView.zoomPosChanged" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="RlpRevlensDISPmodule.init_module">
+<span class="sig-prename descclassname"><span class="pre">RlpRevlensDISPmodule.</span></span><span class="sig-name descname"><span class="pre">init_module</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensDISPmodule.init_module" title="Link to this definition"></a></dt>
+<dd><p>Bootstrap Python Bindings</p>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Justin Ottley.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

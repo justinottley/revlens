@@ -1,0 +1,21 @@
+revlens.keyboard package
+========================
+
+Submodules
+----------
+
+revlens.keyboard.key\_default module
+------------------------------------
+
+.. automodule:: revlens.keyboard.key_default
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: revlens.keyboard
+   :members:
+   :undoc-members:
+   :show-inheritance:

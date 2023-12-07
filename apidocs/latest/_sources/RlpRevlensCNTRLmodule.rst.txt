@@ -1,0 +1,10 @@
+RlpRevlensCNTRLmodule module
+============================
+
+.. _CNTRL_module:
+
+.. automodule:: RlpRevlensCNTRLmodule
+   :members:
+   :undoc-members:
+   :show-inheritance:
+

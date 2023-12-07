@@ -1,0 +1,10 @@
+revlens.gui.dialogs package
+===========================
+
+Module contents
+---------------
+
+.. automodule:: revlens.gui.dialogs
+   :members:
+   :undoc-members:
+   :show-inheritance:

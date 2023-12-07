@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>revlens.media package &mdash; revlens 23.11.20 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=9cbcb6cc"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            revlens
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">revlens.media package</a><ul>
+<li><a class="reference internal" href="#subpackages">Subpackages</a></li>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-revlens.media.locator">revlens.media.locator module</a><ul>
+<li><a class="reference internal" href="#revlens.media.locator.MediaLocator"><code class="docutils literal notranslate"><span class="pre">MediaLocator</span></code></a><ul>
+<li><a class="reference internal" href="#revlens.media.locator.MediaLocator.AUDIO_FORMATS"><code class="docutils literal notranslate"><span class="pre">MediaLocator.AUDIO_FORMATS</span></code></a></li>
+<li><a class="reference internal" href="#revlens.media.locator.MediaLocator.CONTAINER_FORMATS"><code class="docutils literal notranslate"><span class="pre">MediaLocator.CONTAINER_FORMATS</span></code></a></li>
+<li><a class="reference internal" href="#revlens.media.locator.MediaLocator.FRAME_FORMATS"><code class="docutils literal notranslate"><span class="pre">MediaLocator.FRAME_FORMATS</span></code></a></li>
+<li><a class="reference internal" href="#revlens.media.locator.MediaLocator.locate"><code class="docutils literal notranslate"><span class="pre">MediaLocator.locate()</span></code></a></li>
+<li><a class="reference internal" href="#revlens.media.locator.MediaLocator.media_factory"><code class="docutils literal notranslate"><span class="pre">MediaLocator.media_factory</span></code></a></li>
+<li><a class="reference internal" href="#revlens.media.locator.MediaLocator.resolve_components"><code class="docutils literal notranslate"><span class="pre">MediaLocator.resolve_components()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#revlens.media.locator.RemoteFileLocator"><code class="docutils literal notranslate"><span class="pre">RemoteFileLocator</span></code></a><ul>
+<li><a class="reference internal" href="#revlens.media.locator.RemoteFileLocator.can_download"><code class="docutils literal notranslate"><span class="pre">RemoteFileLocator.can_download()</span></code></a></li>
+<li><a class="reference internal" href="#revlens.media.locator.RemoteFileLocator.download_file"><code class="docutils literal notranslate"><span class="pre">RemoteFileLocator.download_file()</span></code></a></li>
+<li><a class="reference internal" href="#revlens.media.locator.RemoteFileLocator.get_local_file_path"><code class="docutils literal notranslate"><span class="pre">RemoteFileLocator.get_local_file_path()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-revlens.media.translation_map">revlens.media.translation_map module</a></li>
+<li><a class="reference internal" href="#module-revlens.media">Module contents</a><ul>
+<li><a class="reference internal" href="#revlens.media.append_to_composite"><code class="docutils literal notranslate"><span class="pre">append_to_composite()</span></code></a></li>
+<li><a class="reference internal" href="#revlens.media.insert_media_at_frame"><code class="docutils literal notranslate"><span class="pre">insert_media_at_frame()</span></code></a></li>
+<li><a class="reference internal" href="#revlens.media.locate"><code class="docutils literal notranslate"><span class="pre">locate()</span></code></a></li>
+<li><a class="reference internal" href="#revlens.media.resolve_components"><code class="docutils literal notranslate"><span class="pre">resolve_components()</span></code></a></li>
+<li><a class="reference internal" href="#revlens.media.sanitize_session"><code class="docutils literal notranslate"><span class="pre">sanitize_session()</span></code></a></li>
+<li><a class="reference internal" href="#revlens.media.startup_load_media"><code class="docutils literal notranslate"><span class="pre">startup_load_media()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">revlens</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">revlens.media package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/revlens.media.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="revlens-media-package">
+<h1>revlens.media package<a class="headerlink" href="#revlens-media-package" title="Link to this heading"></a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="revlens.media.builder.html">revlens.media.builder package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="revlens.media.builder.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="revlens.media.builder.html#module-revlens.media.builder.media_builder">revlens.media.builder.media_builder module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="revlens.media.builder.html#revlens.media.builder.media_builder.MediaBuilder"><code class="docutils literal notranslate"><span class="pre">MediaBuilder</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="revlens.media.builder.html#revlens.media.builder.media_builder.MediaBuilder.add_audio_component"><code class="docutils literal notranslate"><span class="pre">MediaBuilder.add_audio_component()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="revlens.media.builder.html#revlens.media.builder.media_builder.MediaBuilder.add_audio_component_info"><code class="docutils literal notranslate"><span class="pre">MediaBuilder.add_audio_component_info()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="revlens.media.builder.html#revlens.media.builder.media_builder.MediaBuilder.add_thumbnail_component"><code class="docutils literal notranslate"><span class="pre">MediaBuilder.add_thumbnail_component()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="revlens.media.builder.html#revlens.media.builder.media_builder.MediaBuilder.add_video_component"><code class="docutils literal notranslate"><span class="pre">MediaBuilder.add_video_component()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="revlens.media.builder.html#revlens.media.builder.media_builder.MediaBuilder.add_video_component_info"><code class="docutils literal notranslate"><span class="pre">MediaBuilder.add_video_component_info()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="revlens.media.builder.html#revlens.media.builder.media_builder.MediaBuilder.metadata"><code class="docutils literal notranslate"><span class="pre">MediaBuilder.metadata</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="revlens.media.builder.html#module-revlens.media.builder.session_builder">revlens.media.builder.session_builder module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="revlens.media.builder.html#revlens.media.builder.session_builder.SessionBuilder"><code class="docutils literal notranslate"><span class="pre">SessionBuilder</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="revlens.media.builder.html#revlens.media.builder.session_builder.SessionBuilder.add_media"><code class="docutils literal notranslate"><span class="pre">SessionBuilder.add_media()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="revlens.media.builder.html#revlens.media.builder.session_builder.SessionBuilder.build_annotation_track"><code class="docutils literal notranslate"><span class="pre">SessionBuilder.build_annotation_track()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="revlens.media.builder.html#revlens.media.builder.session_builder.SessionBuilder.build_media_track"><code class="docutils literal notranslate"><span class="pre">SessionBuilder.build_media_track()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="revlens.media.builder.html#revlens.media.builder.session_builder.SessionBuilder.build_track"><code class="docutils literal notranslate"><span class="pre">SessionBuilder.build_track()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="revlens.media.builder.html#revlens.media.builder.session_builder.SessionBuilder.sanitize_media"><code class="docutils literal notranslate"><span class="pre">SessionBuilder.sanitize_media()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="revlens.media.builder.html#revlens.media.builder.session_builder.SessionBuilder.sanitize_session"><code class="docutils literal notranslate"><span class="pre">SessionBuilder.sanitize_session()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="revlens.media.builder.html#revlens.media.builder.session_builder.SessionBuilder.sanitize_track"><code class="docutils literal notranslate"><span class="pre">SessionBuilder.sanitize_track()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="revlens.media.builder.html#revlens.media.builder.session_builder.SessionIO"><code class="docutils literal notranslate"><span class="pre">SessionIO</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="revlens.media.builder.html#revlens.media.builder.session_builder.SessionIO.add_track"><code class="docutils literal notranslate"><span class="pre">SessionIO.add_track()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="revlens.media.builder.html#revlens.media.builder.session_builder.SessionIO.flush"><code class="docutils literal notranslate"><span class="pre">SessionIO.flush()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="revlens.media.builder.html#revlens.media.builder.session_builder.SessionIO.raw_add_media_to_track"><code class="docutils literal notranslate"><span class="pre">SessionIO.raw_add_media_to_track()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="revlens.media.builder.html#revlens.media.builder.session_builder.SessionIO.raw_add_track"><code class="docutils literal notranslate"><span class="pre">SessionIO.raw_add_track()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="revlens.media.builder.html#revlens.media.builder.session_builder.SessionIO.raw_delete_track"><code class="docutils literal notranslate"><span class="pre">SessionIO.raw_delete_track()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="revlens.media.builder.html#revlens.media.builder.session_builder.SessionIO.raw_remove_media"><code class="docutils literal notranslate"><span class="pre">SessionIO.raw_remove_media()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="revlens.media.builder.html#revlens.media.builder.session_builder.SessionIO.raw_update_media_property"><code class="docutils literal notranslate"><span class="pre">SessionIO.raw_update_media_property()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="revlens.media.builder.html#revlens.media.builder.session_builder.SessionIO.raw_update_track"><code class="docutils literal notranslate"><span class="pre">SessionIO.raw_update_track()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="revlens.media.builder.html#revlens.media.builder.session_builder.SingleFileSessionIO"><code class="docutils literal notranslate"><span class="pre">SingleFileSessionIO</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="revlens.media.builder.html#revlens.media.builder.session_builder.SingleFileSessionIO.read"><code class="docutils literal notranslate"><span class="pre">SingleFileSessionIO.read()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="revlens.media.builder.html#revlens.media.builder.session_builder.SingleFileSessionIO.write"><code class="docutils literal notranslate"><span class="pre">SingleFileSessionIO.write()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="revlens.media.builder.html#revlens.media.builder.session_builder.SplitFileSessionIO"><code class="docutils literal notranslate"><span class="pre">SplitFileSessionIO</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="revlens.media.builder.html#revlens.media.builder.session_builder.SplitFileSessionIO.clean_annotations"><code class="docutils literal notranslate"><span class="pre">SplitFileSessionIO.clean_annotations()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="revlens.media.builder.html#revlens.media.builder.session_builder.SplitFileSessionIO.flush"><code class="docutils literal notranslate"><span class="pre">SplitFileSessionIO.flush()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="revlens.media.builder.html#revlens.media.builder.session_builder.SplitFileSessionIO.read"><code class="docutils literal notranslate"><span class="pre">SplitFileSessionIO.read()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="revlens.media.builder.html#revlens.media.builder.session_builder.SplitFileSessionIO.update_track"><code class="docutils literal notranslate"><span class="pre">SplitFileSessionIO.update_track()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="revlens.media.builder.html#revlens.media.builder.session_builder.SplitFileSessionIO.write"><code class="docutils literal notranslate"><span class="pre">SplitFileSessionIO.write()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="revlens.media.builder.html#revlens.media.builder.session_builder.SplitFileSessionIO.write_annotation_track"><code class="docutils literal notranslate"><span class="pre">SplitFileSessionIO.write_annotation_track()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="revlens.media.builder.html#module-revlens.media.builder">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-revlens.media.locator">
+<span id="revlens-media-locator-module"></span><h2>revlens.media.locator module<a class="headerlink" href="#module-revlens.media.locator" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="revlens.media.locator.MediaLocator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">revlens.media.locator.</span></span><span class="sig-name descname"><span class="pre">MediaLocator</span></span><a class="headerlink" href="#revlens.media.locator.MediaLocator" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="revlens.media.locator.MediaLocator.AUDIO_FORMATS">
+<span class="sig-name descname"><span class="pre">AUDIO_FORMATS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['.wav',</span> <span class="pre">'.aac',</span> <span class="pre">'.mp3',</span> <span class="pre">'.m4a']</span></em><a class="headerlink" href="#revlens.media.locator.MediaLocator.AUDIO_FORMATS" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="revlens.media.locator.MediaLocator.CONTAINER_FORMATS">
+<span class="sig-name descname"><span class="pre">CONTAINER_FORMATS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['.mov',</span> <span class="pre">'.avi',</span> <span class="pre">'.mp4',</span> <span class="pre">'.ogv',</span> <span class="pre">'.m4v',</span> <span class="pre">'.mkv']</span></em><a class="headerlink" href="#revlens.media.locator.MediaLocator.CONTAINER_FORMATS" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="revlens.media.locator.MediaLocator.FRAME_FORMATS">
+<span class="sig-name descname"><span class="pre">FRAME_FORMATS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['.jpg',</span> <span class="pre">'.png',</span> <span class="pre">'.tif',</span> <span class="pre">'.tiff',</span> <span class="pre">'.exr',</span> <span class="pre">'.dpx',</span> <span class="pre">'.cin',</span> <span class="pre">'.tif',</span> <span class="pre">'.tiff',</span> <span class="pre">'.psd']</span></em><a class="headerlink" href="#revlens.media.locator.MediaLocator.FRAME_FORMATS" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="revlens.media.locator.MediaLocator.locate">
+<span class="sig-name descname"><span class="pre">locate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">media_input</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resolve_components</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#revlens.media.locator.MediaLocator.locate" title="Link to this definition"></a></dt>
+<dd><p>Locate and then identify actual media source to use based on component search path preference</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="revlens.media.locator.MediaLocator.media_factory">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media_factory</span></span><a class="headerlink" href="#revlens.media.locator.MediaLocator.media_factory" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="revlens.media.locator.MediaLocator.resolve_components">
+<span class="sig-name descname"><span class="pre">resolve_components</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">media_input</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#revlens.media.locator.MediaLocator.resolve_components" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="revlens.media.locator.RemoteFileLocator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">revlens.media.locator.</span></span><span class="sig-name descname"><span class="pre">RemoteFileLocator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">download</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Filesys'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#revlens.media.locator.RemoteFileLocator" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#revlens.media.locator.MediaLocator" title="revlens.media.locator.MediaLocator"><code class="xref py py-class docutils literal notranslate"><span class="pre">MediaLocator</span></code></a></p>
+<p>Attempt to download a file from a service if not found on locally accessible filesystem</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="revlens.media.locator.RemoteFileLocator.can_download">
+<span class="sig-name descname"><span class="pre">can_download</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">media_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">component_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">search_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#revlens.media.locator.RemoteFileLocator.can_download" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="revlens.media.locator.RemoteFileLocator.download_file">
+<span class="sig-name descname"><span class="pre">download_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">media_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">component_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#revlens.media.locator.RemoteFileLocator.download_file" title="Link to this definition"></a></dt>
+<dd><p>Download file to local file cache, with progress</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="revlens.media.locator.RemoteFileLocator.get_local_file_path">
+<span class="sig-name descname"><span class="pre">get_local_file_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#revlens.media.locator.RemoteFileLocator.get_local_file_path" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-revlens.media.translation_map">
+<span id="revlens-media-translation-map-module"></span><h2>revlens.media.translation_map module<a class="headerlink" href="#module-revlens.media.translation_map" title="Link to this heading"></a></h2>
+</section>
+<section id="module-revlens.media">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-revlens.media" title="Link to this heading"></a></h2>
+<p>Copyright (c) 2014-2019 Justin Ottley. All rights reserved.</p>
+<dl class="simple">
+<dt>{</dt><dd><p>“media.video”:
+“media.audio”:
+“media.name”:</p>
+</dd>
+</dl>
+<p>}</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="revlens.media.append_to_composite">
+<span class="sig-prename descclassname"><span class="pre">revlens.media.</span></span><span class="sig-name descname"><span class="pre">append_to_composite</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#revlens.media.append_to_composite" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="revlens.media.insert_media_at_frame">
+<span class="sig-prename descclassname"><span class="pre">revlens.media.</span></span><span class="sig-name descname"><span class="pre">insert_media_at_frame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">media_in</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">track_idx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame_num</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">emit_sync_action</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">identify</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#revlens.media.insert_media_at_frame" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="revlens.media.locate">
+<span class="sig-prename descclassname"><span class="pre">revlens.media.</span></span><span class="sig-name descname"><span class="pre">locate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">media_input</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resolve_components</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#revlens.media.locate" title="Link to this definition"></a></dt>
+<dd><p>Run a series of locators to build a data dictionary from arbitrary media input
+media_input could be the full path to a media file</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="revlens.media.resolve_components">
+<span class="sig-prename descclassname"><span class="pre">revlens.media.</span></span><span class="sig-name descname"><span class="pre">resolve_components</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">media_input</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#revlens.media.resolve_components" title="Link to this definition"></a></dt>
+<dd><p>Resolve media input dict containing potentially multiple components (frames, movie, etc)
+for a piece of media into a single one using configured component search path</p>
+<p>NOTE: although this is modifying the input in-place, it is also returned
+to pass back through the python binding to C++</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="revlens.media.sanitize_session">
+<span class="sig-prename descclassname"><span class="pre">revlens.media.</span></span><span class="sig-name descname"><span class="pre">sanitize_session</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session_input</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">remove_paths</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#revlens.media.sanitize_session" title="Link to this definition"></a></dt>
+<dd><p>NOTE: although this is modifying the input in-place, it is also returned
+to pass back through the python binding to C++</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="revlens.media.startup_load_media">
+<span class="sig-prename descclassname"><span class="pre">revlens.media.</span></span><span class="sig-name descname"><span class="pre">startup_load_media</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#revlens.media.startup_load_media" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Justin Ottley.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

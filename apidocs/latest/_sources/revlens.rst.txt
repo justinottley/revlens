@@ -1,0 +1,44 @@
+revlens package
+===============
+
+Module contents
+---------------
+
+.. automodule:: revlens
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   revlens.gui
+   revlens.keyboard
+   revlens.media
+
+Submodules
+----------
+
+.. _revlens_cmds:
+
+revlens.cmds module
+-------------------
+
+
+.. automodule:: revlens.cmds
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+revlens.plugin module
+---------------------
+
+.. automodule:: revlens.plugin
+   :members:
+   :undoc-members:
+   :show-inheritance:
+

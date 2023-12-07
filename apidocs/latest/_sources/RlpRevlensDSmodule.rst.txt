@@ -1,0 +1,9 @@
+RlpRevlensDSmodule module
+=========================
+
+.. _revlens_DS_module:
+
+.. automodule:: RlpRevlensDSmodule
+   :members:
+   :undoc-members:
+   :show-inheritance:

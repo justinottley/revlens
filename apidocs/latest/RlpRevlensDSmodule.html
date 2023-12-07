@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RlpRevlensDSmodule module &mdash; revlens 23.11.20 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=9cbcb6cc"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            revlens
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">RlpRevlensDSmodule module</a><ul>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_EventPlugin"><code class="docutils literal notranslate"><span class="pre">DS_EventPlugin</span></code></a><ul>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_EventPlugin.asEventClass"><code class="docutils literal notranslate"><span class="pre">DS_EventPlugin.asEventClass()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_EventPlugin.getSettingsUI"><code class="docutils literal notranslate"><span class="pre">DS_EventPlugin.getSettingsUI()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_EventPlugin.name"><code class="docutils literal notranslate"><span class="pre">DS_EventPlugin.name()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_EventPlugin.setEnabled"><code class="docutils literal notranslate"><span class="pre">DS_EventPlugin.setEnabled()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Graph"><code class="docutils literal notranslate"><span class="pre">DS_Graph</span></code></a><ul>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Graph.dataReady"><code class="docutils literal notranslate"><span class="pre">DS_Graph.dataReady</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Graph.uuid"><code class="docutils literal notranslate"><span class="pre">DS_Graph.uuid()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Node"><code class="docutils literal notranslate"><span class="pre">DS_Node</span></code></a><ul>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Node.addInput"><code class="docutils literal notranslate"><span class="pre">DS_Node.addInput()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Node.dataReady"><code class="docutils literal notranslate"><span class="pre">DS_Node.dataReady</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Node.disable"><code class="docutils literal notranslate"><span class="pre">DS_Node.disable()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Node.emitDataReadyToGraph"><code class="docutils literal notranslate"><span class="pre">DS_Node.emitDataReadyToGraph()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Node.enable"><code class="docutils literal notranslate"><span class="pre">DS_Node.enable()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Node.getProperties"><code class="docutils literal notranslate"><span class="pre">DS_Node.getProperties()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Node.graph"><code class="docutils literal notranslate"><span class="pre">DS_Node.graph()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Node.input"><code class="docutils literal notranslate"><span class="pre">DS_Node.input()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Node.inputCount"><code class="docutils literal notranslate"><span class="pre">DS_Node.inputCount()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Node.insertProperty"><code class="docutils literal notranslate"><span class="pre">DS_Node.insertProperty()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Node.makeTime"><code class="docutils literal notranslate"><span class="pre">DS_Node.makeTime()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Node.name"><code class="docutils literal notranslate"><span class="pre">DS_Node.name()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Node.onGraphDataReady"><code class="docutils literal notranslate"><span class="pre">DS_Node.onGraphDataReady()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Node.toJson"><code class="docutils literal notranslate"><span class="pre">DS_Node.toJson()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Node.uuid"><code class="docutils literal notranslate"><span class="pre">DS_Node.uuid()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_NodeFactoryPlugin"><code class="docutils literal notranslate"><span class="pre">DS_NodeFactoryPlugin</span></code></a><ul>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_NodeFactoryPlugin.runCreateNode"><code class="docutils literal notranslate"><span class="pre">DS_NodeFactoryPlugin.runCreateNode()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_PlaybackMode"><code class="docutils literal notranslate"><span class="pre">DS_PlaybackMode</span></code></a><ul>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_PlaybackMode.clampFrame"><code class="docutils literal notranslate"><span class="pre">DS_PlaybackMode.clampFrame()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_PlaybackMode.getFrameCount"><code class="docutils literal notranslate"><span class="pre">DS_PlaybackMode.getFrameCount()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_PlaybackMode.getFrameIncrement"><code class="docutils literal notranslate"><span class="pre">DS_PlaybackMode.getFrameIncrement()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_PlaybackMode.getInFrame"><code class="docutils literal notranslate"><span class="pre">DS_PlaybackMode.getInFrame()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_PlaybackMode.getNextFrameNum"><code class="docutils literal notranslate"><span class="pre">DS_PlaybackMode.getNextFrameNum()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_PlaybackMode.getOutFrame"><code class="docutils literal notranslate"><span class="pre">DS_PlaybackMode.getOutFrame()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_PlaybackMode.setFrameRange"><code class="docutils literal notranslate"><span class="pre">DS_PlaybackMode.setFrameRange()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_PlaybackMode.setInFrame"><code class="docutils literal notranslate"><span class="pre">DS_PlaybackMode.setInFrame()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_PlaybackMode.setOutFrame"><code class="docutils literal notranslate"><span class="pre">DS_PlaybackMode.setOutFrame()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session"><code class="docutils literal notranslate"><span class="pre">DS_Session</span></code></a><ul>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session.addTrack"><code class="docutils literal notranslate"><span class="pre">DS_Session.addTrack()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session.addTrackAllDefaults"><code class="docutils literal notranslate"><span class="pre">DS_Session.addTrackAllDefaults()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session.addTrackByType"><code class="docutils literal notranslate"><span class="pre">DS_Session.addTrackByType()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session.addTrackNoSync"><code class="docutils literal notranslate"><span class="pre">DS_Session.addTrackNoSync()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session.cacheDir"><code class="docutils literal notranslate"><span class="pre">DS_Session.cacheDir()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session.clear"><code class="docutils literal notranslate"><span class="pre">DS_Session.clear()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session.clearTrack"><code class="docutils literal notranslate"><span class="pre">DS_Session.clearTrack()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session.deleteTrack"><code class="docutils literal notranslate"><span class="pre">DS_Session.deleteTrack()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session.emitTrackDataChanged"><code class="docutils literal notranslate"><span class="pre">DS_Session.emitTrackDataChanged()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session.frameCount"><code class="docutils literal notranslate"><span class="pre">DS_Session.frameCount()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session.frameCountChanged"><code class="docutils literal notranslate"><span class="pre">DS_Session.frameCountChanged</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session.getAllNodesByFrame"><code class="docutils literal notranslate"><span class="pre">DS_Session.getAllNodesByFrame()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session.getNextTrackIndex"><code class="docutils literal notranslate"><span class="pre">DS_Session.getNextTrackIndex()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session.getNodeByFrame"><code class="docutils literal notranslate"><span class="pre">DS_Session.getNodeByFrame()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session.getNodeByUuid"><code class="docutils literal notranslate"><span class="pre">DS_Session.getNodeByUuid()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session.getNodeFrameIndex"><code class="docutils literal notranslate"><span class="pre">DS_Session.getNodeFrameIndex()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session.getTrackByIndex"><code class="docutils literal notranslate"><span class="pre">DS_Session.getTrackByIndex()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session.getTrackByUuid"><code class="docutils literal notranslate"><span class="pre">DS_Session.getTrackByUuid()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session.inFrame"><code class="docutils literal notranslate"><span class="pre">DS_Session.inFrame()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session.inFrameChanged"><code class="docutils literal notranslate"><span class="pre">DS_Session.inFrameChanged</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session.isFrameValid"><code class="docutils literal notranslate"><span class="pre">DS_Session.isFrameValid()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session.mediaAdded"><code class="docutils literal notranslate"><span class="pre">DS_Session.mediaAdded</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session.mediaAddedDict"><code class="docutils literal notranslate"><span class="pre">DS_Session.mediaAddedDict</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session.mediaRemoved"><code class="docutils literal notranslate"><span class="pre">DS_Session.mediaRemoved</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session.name"><code class="docutils literal notranslate"><span class="pre">DS_Session.name()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session.numTracks"><code class="docutils literal notranslate"><span class="pre">DS_Session.numTracks()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session.onMediaAdded"><code class="docutils literal notranslate"><span class="pre">DS_Session.onMediaAdded()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session.onMediaRemoved"><code class="docutils literal notranslate"><span class="pre">DS_Session.onMediaRemoved()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session.onTrackDataChanged"><code class="docutils literal notranslate"><span class="pre">DS_Session.onTrackDataChanged()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session.outFrame"><code class="docutils literal notranslate"><span class="pre">DS_Session.outFrame()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session.outFrameChanged"><code class="docutils literal notranslate"><span class="pre">DS_Session.outFrameChanged</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session.properties"><code class="docutils literal notranslate"><span class="pre">DS_Session.properties()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session.registerTrackFactoryPlugin"><code class="docutils literal notranslate"><span class="pre">DS_Session.registerTrackFactoryPlugin()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session.sessionCleared"><code class="docutils literal notranslate"><span class="pre">DS_Session.sessionCleared</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session.setFrameCount"><code class="docutils literal notranslate"><span class="pre">DS_Session.setFrameCount()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session.setInFrame"><code class="docutils literal notranslate"><span class="pre">DS_Session.setInFrame()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session.setOutFrame"><code class="docutils literal notranslate"><span class="pre">DS_Session.setOutFrame()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session.setTrackEnabled"><code class="docutils literal notranslate"><span class="pre">DS_Session.setTrackEnabled()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session.setTrackIndexOrderPolicy"><code class="docutils literal notranslate"><span class="pre">DS_Session.setTrackIndexOrderPolicy()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session.setTrackTypeIndexOrder"><code class="docutils literal notranslate"><span class="pre">DS_Session.setTrackTypeIndexOrder()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session.siteCacheDir"><code class="docutils literal notranslate"><span class="pre">DS_Session.siteCacheDir()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session.startFrame"><code class="docutils literal notranslate"><span class="pre">DS_Session.startFrame()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session.syncAction"><code class="docutils literal notranslate"><span class="pre">DS_Session.syncAction</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session.toJson"><code class="docutils literal notranslate"><span class="pre">DS_Session.toJson()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session.trackAdded"><code class="docutils literal notranslate"><span class="pre">DS_Session.trackAdded</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session.trackCleared"><code class="docutils literal notranslate"><span class="pre">DS_Session.trackCleared</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session.trackDataChanged"><code class="docutils literal notranslate"><span class="pre">DS_Session.trackDataChanged</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session.trackDeleted"><code class="docutils literal notranslate"><span class="pre">DS_Session.trackDeleted</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session.trackIndexOrderPolicy"><code class="docutils literal notranslate"><span class="pre">DS_Session.trackIndexOrderPolicy()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session.trackList"><code class="docutils literal notranslate"><span class="pre">DS_Session.trackList()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session.trackTypeIndexOrder"><code class="docutils literal notranslate"><span class="pre">DS_Session.trackTypeIndexOrder()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session.trackVisibilityChanged"><code class="docutils literal notranslate"><span class="pre">DS_Session.trackVisibilityChanged</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session.updateProperties"><code class="docutils literal notranslate"><span class="pre">DS_Session.updateProperties()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session.uuid"><code class="docutils literal notranslate"><span class="pre">DS_Session.uuid()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Track"><code class="docutils literal notranslate"><span class="pre">DS_Track</span></code></a><ul>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Track.cacheDir"><code class="docutils literal notranslate"><span class="pre">DS_Track.cacheDir()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Track.clear"><code class="docutils literal notranslate"><span class="pre">DS_Track.clear()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Track.dataReady"><code class="docutils literal notranslate"><span class="pre">DS_Track.dataReady</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Track.enabled"><code class="docutils literal notranslate"><span class="pre">DS_Track.enabled()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Track.getFrames"><code class="docutils literal notranslate"><span class="pre">DS_Track.getFrames()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Track.getMaxFrameNum"><code class="docutils literal notranslate"><span class="pre">DS_Track.getMaxFrameNum()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Track.getMediaFrameNum"><code class="docutils literal notranslate"><span class="pre">DS_Track.getMediaFrameNum()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Track.getNodeByFrame"><code class="docutils literal notranslate"><span class="pre">DS_Track.getNodeByFrame()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Track.getNodeFrameIndex"><code class="docutils literal notranslate"><span class="pre">DS_Track.getNodeFrameIndex()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Track.getNodeFrameList"><code class="docutils literal notranslate"><span class="pre">DS_Track.getNodeFrameList()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Track.getNodeInfo"><code class="docutils literal notranslate"><span class="pre">DS_Track.getNodeInfo()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Track.hasNode"><code class="docutils literal notranslate"><span class="pre">DS_Track.hasNode()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Track.index"><code class="docutils literal notranslate"><span class="pre">DS_Track.index()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Track.insertNode"><code class="docutils literal notranslate"><span class="pre">DS_Track.insertNode()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Track.isEditable"><code class="docutils literal notranslate"><span class="pre">DS_Track.isEditable()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Track.load"><code class="docutils literal notranslate"><span class="pre">DS_Track.load()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Track.mediaAdded"><code class="docutils literal notranslate"><span class="pre">DS_Track.mediaAdded</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Track.mediaCount"><code class="docutils literal notranslate"><span class="pre">DS_Track.mediaCount()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Track.mediaRemoved"><code class="docutils literal notranslate"><span class="pre">DS_Track.mediaRemoved</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Track.moveNodeToFrame"><code class="docutils literal notranslate"><span class="pre">DS_Track.moveNodeToFrame()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Track.name"><code class="docutils literal notranslate"><span class="pre">DS_Track.name()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Track.onNodeDataReadyReceived"><code class="docutils literal notranslate"><span class="pre">DS_Track.onNodeDataReadyReceived()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Track.owner"><code class="docutils literal notranslate"><span class="pre">DS_Track.owner()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Track.removeNodeByFrame"><code class="docutils literal notranslate"><span class="pre">DS_Track.removeNodeByFrame()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Track.session"><code class="docutils literal notranslate"><span class="pre">DS_Track.session()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Track.setEnabled"><code class="docutils literal notranslate"><span class="pre">DS_Track.setEnabled()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Track.setName"><code class="docutils literal notranslate"><span class="pre">DS_Track.setName()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Track.setOwner"><code class="docutils literal notranslate"><span class="pre">DS_Track.setOwner()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Track.setTrackIndex"><code class="docutils literal notranslate"><span class="pre">DS_Track.setTrackIndex()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Track.setTrackTypeName"><code class="docutils literal notranslate"><span class="pre">DS_Track.setTrackTypeName()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Track.toJson"><code class="docutils literal notranslate"><span class="pre">DS_Track.toJson()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Track.trackCleared"><code class="docutils literal notranslate"><span class="pre">DS_Track.trackCleared</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Track.trackDataChanged"><code class="docutils literal notranslate"><span class="pre">DS_Track.trackDataChanged</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Track.trackType"><code class="docutils literal notranslate"><span class="pre">DS_Track.trackType()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Track.trackTypeName"><code class="docutils literal notranslate"><span class="pre">DS_Track.trackTypeName()</span></code></a></li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.DS_Track.uuid"><code class="docutils literal notranslate"><span class="pre">DS_Track.uuid()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#RlpRevlensDSmodule.init_module"><code class="docutils literal notranslate"><span class="pre">init_module()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">revlens</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">RlpRevlensDSmodule module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/RlpRevlensDSmodule.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="rlprevlensdsmodule-module">
+<h1>RlpRevlensDSmodule module<a class="headerlink" href="#rlprevlensdsmodule-module" title="Link to this heading"></a></h1>
+<dl class="py class" id="module-RlpRevlensDSmodule">
+<span id="revlens-ds-module"></span><dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_EventPlugin">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">RlpRevlensDSmodule.</span></span><span class="sig-name descname"><span class="pre">DS_EventPlugin</span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_EventPlugin" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_EventPlugin.asEventClass">
+<span class="sig-name descname"><span class="pre">asEventClass</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_EventPlugin" title="RlpRevlensDSmodule.DS_EventPlugin"><span class="pre">RlpRevlensDSmodule.DS_EventPlugin</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#RlpRevlensDSmodule.DS_EventPlugin" title="RlpRevlensDSmodule.DS_EventPlugin"><span class="pre">RlpRevlensDSmodule.DS_EventPlugin</span></a></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_EventPlugin.asEventClass" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_EventPlugin.getSettingsUI">
+<span class="sig-name descname"><span class="pre">getSettingsUI</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_EventPlugin" title="RlpRevlensDSmodule.DS_EventPlugin"><span class="pre">RlpRevlensDSmodule.DS_EventPlugin</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_EventPlugin.getSettingsUI" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_EventPlugin.name">
+<span class="sig-name descname"><span class="pre">name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_EventPlugin" title="RlpRevlensDSmodule.DS_EventPlugin"><span class="pre">RlpRevlensDSmodule.DS_EventPlugin</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_EventPlugin.name" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_EventPlugin.setEnabled">
+<span class="sig-name descname"><span class="pre">setEnabled</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_EventPlugin" title="RlpRevlensDSmodule.DS_EventPlugin"><span class="pre">RlpRevlensDSmodule.DS_EventPlugin</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_EventPlugin.setEnabled" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Graph">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">RlpRevlensDSmodule.</span></span><span class="sig-name descname"><span class="pre">DS_Graph</span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Graph" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_object</span></code></p>
+<dl class="py property">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Graph.dataReady">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dataReady</span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Graph.dataReady" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Graph.uuid">
+<span class="sig-name descname"><span class="pre">uuid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Graph" title="RlpRevlensDSmodule.DS_Graph"><span class="pre">RlpRevlensDSmodule.DS_Graph</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">RlpCoreQTCORE.QUuid</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Graph.uuid" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Node">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">RlpRevlensDSmodule.</span></span><span class="sig-name descname"><span class="pre">DS_Node</span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Node" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Node.addInput">
+<span class="sig-name descname"><span class="pre">addInput</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Node" title="RlpRevlensDSmodule.DS_Node"><span class="pre">RlpRevlensDSmodule.DS_Node</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Node" title="RlpRevlensDSmodule.DS_Node"><span class="pre">RlpRevlensDSmodule.DS_Node</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Node.addInput" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Node.dataReady">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dataReady</span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Node.dataReady" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Node.disable">
+<span class="sig-name descname"><span class="pre">disable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Node" title="RlpRevlensDSmodule.DS_Node"><span class="pre">RlpRevlensDSmodule.DS_Node</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Node.disable" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Node.emitDataReadyToGraph">
+<span class="sig-name descname"><span class="pre">emitDataReadyToGraph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Node" title="RlpRevlensDSmodule.DS_Node"><span class="pre">RlpRevlensDSmodule.DS_Node</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Node.emitDataReadyToGraph" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Node.enable">
+<span class="sig-name descname"><span class="pre">enable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Node" title="RlpRevlensDSmodule.DS_Node"><span class="pre">RlpRevlensDSmodule.DS_Node</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Node.enable" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Node.getProperties">
+<span class="sig-name descname"><span class="pre">getProperties</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Node" title="RlpRevlensDSmodule.DS_Node"><span class="pre">RlpRevlensDSmodule.DS_Node</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Node.getProperties" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Node.graph">
+<span class="sig-name descname"><span class="pre">graph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Node" title="RlpRevlensDSmodule.DS_Node"><span class="pre">RlpRevlensDSmodule.DS_Node</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Graph" title="RlpRevlensDSmodule.DS_Graph"><span class="pre">RlpRevlensDSmodule.DS_Graph</span></a></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Node.graph" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Node.input">
+<span class="sig-name descname"><span class="pre">input</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Node" title="RlpRevlensDSmodule.DS_Node"><span class="pre">RlpRevlensDSmodule.DS_Node</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Node" title="RlpRevlensDSmodule.DS_Node"><span class="pre">RlpRevlensDSmodule.DS_Node</span></a></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Node.input" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Node.inputCount">
+<span class="sig-name descname"><span class="pre">inputCount</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Node" title="RlpRevlensDSmodule.DS_Node"><span class="pre">RlpRevlensDSmodule.DS_Node</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Node.inputCount" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Node.insertProperty">
+<span class="sig-name descname"><span class="pre">insertProperty</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Node" title="RlpRevlensDSmodule.DS_Node"><span class="pre">RlpRevlensDSmodule.DS_Node</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">object</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Node.insertProperty" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Node.makeTime">
+<span class="sig-name descname"><span class="pre">makeTime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Node" title="RlpRevlensDSmodule.DS_Node"><span class="pre">RlpRevlensDSmodule.DS_Node</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DS_Time</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Node.makeTime" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Node.name">
+<span class="sig-name descname"><span class="pre">name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Node" title="RlpRevlensDSmodule.DS_Node"><span class="pre">RlpRevlensDSmodule.DS_Node</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Node.name" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Node.onGraphDataReady">
+<span class="sig-name descname"><span class="pre">onGraphDataReady</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Node" title="RlpRevlensDSmodule.DS_Node"><span class="pre">RlpRevlensDSmodule.DS_Node</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Node.onGraphDataReady" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Node.toJson">
+<span class="sig-name descname"><span class="pre">toJson</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Node" title="RlpRevlensDSmodule.DS_Node"><span class="pre">RlpRevlensDSmodule.DS_Node</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">RlpCoreQTCORE.QJsonObject</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Node.toJson" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Node.uuid">
+<span class="sig-name descname"><span class="pre">uuid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Node" title="RlpRevlensDSmodule.DS_Node"><span class="pre">RlpRevlensDSmodule.DS_Node</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">RlpCoreQTCORE.QUuid</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Node.uuid" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_NodeFactoryPlugin">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">RlpRevlensDSmodule.</span></span><span class="sig-name descname"><span class="pre">DS_NodeFactoryPlugin</span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_NodeFactoryPlugin" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_NodeFactoryPlugin.runCreateNode">
+<span class="sig-name descname"><span class="pre">runCreateNode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_NodeFactoryPlugin" title="RlpRevlensDSmodule.DS_NodeFactoryPlugin"><span class="pre">RlpRevlensDSmodule.DS_NodeFactoryPlugin</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Node" title="RlpRevlensDSmodule.DS_Node"><span class="pre">DS_Node</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">RlpCoreQTCORE.QVariantMap</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Node" title="RlpRevlensDSmodule.DS_Node"><span class="pre">DS_Node</span></a></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_NodeFactoryPlugin.runCreateNode" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_PlaybackMode">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">RlpRevlensDSmodule.</span></span><span class="sig-name descname"><span class="pre">DS_PlaybackMode</span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_PlaybackMode" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_PlaybackMode.clampFrame">
+<span class="sig-name descname"><span class="pre">clampFrame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_PlaybackMode" title="RlpRevlensDSmodule.DS_PlaybackMode"><span class="pre">RlpRevlensDSmodule.DS_PlaybackMode</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_PlaybackMode.clampFrame" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_PlaybackMode.getFrameCount">
+<span class="sig-name descname"><span class="pre">getFrameCount</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_PlaybackMode" title="RlpRevlensDSmodule.DS_PlaybackMode"><span class="pre">RlpRevlensDSmodule.DS_PlaybackMode</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_PlaybackMode.getFrameCount" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_PlaybackMode.getFrameIncrement">
+<span class="sig-name descname"><span class="pre">getFrameIncrement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_PlaybackMode" title="RlpRevlensDSmodule.DS_PlaybackMode"><span class="pre">RlpRevlensDSmodule.DS_PlaybackMode</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_PlaybackMode.getFrameIncrement" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_PlaybackMode.getInFrame">
+<span class="sig-name descname"><span class="pre">getInFrame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_PlaybackMode" title="RlpRevlensDSmodule.DS_PlaybackMode"><span class="pre">RlpRevlensDSmodule.DS_PlaybackMode</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_PlaybackMode.getInFrame" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_PlaybackMode.getNextFrameNum">
+<span class="sig-name descname"><span class="pre">getNextFrameNum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_PlaybackMode" title="RlpRevlensDSmodule.DS_PlaybackMode"><span class="pre">RlpRevlensDSmodule.DS_PlaybackMode</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_PlaybackMode.getNextFrameNum" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_PlaybackMode.getOutFrame">
+<span class="sig-name descname"><span class="pre">getOutFrame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_PlaybackMode" title="RlpRevlensDSmodule.DS_PlaybackMode"><span class="pre">RlpRevlensDSmodule.DS_PlaybackMode</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_PlaybackMode.getOutFrame" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_PlaybackMode.setFrameRange">
+<span class="sig-name descname"><span class="pre">setFrameRange</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_PlaybackMode" title="RlpRevlensDSmodule.DS_PlaybackMode"><span class="pre">RlpRevlensDSmodule.DS_PlaybackMode</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_PlaybackMode.setFrameRange" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_PlaybackMode.setInFrame">
+<span class="sig-name descname"><span class="pre">setInFrame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_PlaybackMode" title="RlpRevlensDSmodule.DS_PlaybackMode"><span class="pre">RlpRevlensDSmodule.DS_PlaybackMode</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_PlaybackMode.setInFrame" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_PlaybackMode.setOutFrame">
+<span class="sig-name descname"><span class="pre">setOutFrame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_PlaybackMode" title="RlpRevlensDSmodule.DS_PlaybackMode"><span class="pre">RlpRevlensDSmodule.DS_PlaybackMode</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_PlaybackMode.setOutFrame" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Session">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">RlpRevlensDSmodule.</span></span><span class="sig-name descname"><span class="pre">DS_Session</span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Session" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Session.addTrack">
+<span class="sig-name descname"><span class="pre">addTrack</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session" title="RlpRevlensDSmodule.DS_Session"><span class="pre">RlpRevlensDSmodule.DS_Session</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">RlpCoreQTCORE.QUuid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg3</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg4</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Track" title="RlpRevlensDSmodule.DS_Track"><span class="pre">RlpRevlensDSmodule.DS_Track</span></a></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Session.addTrack" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Session.addTrackAllDefaults">
+<span class="sig-name descname"><span class="pre">addTrackAllDefaults</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session" title="RlpRevlensDSmodule.DS_Session"><span class="pre">RlpRevlensDSmodule.DS_Session</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Track" title="RlpRevlensDSmodule.DS_Track"><span class="pre">RlpRevlensDSmodule.DS_Track</span></a></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Session.addTrackAllDefaults" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Session.addTrackByType">
+<span class="sig-name descname"><span class="pre">addTrackByType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session" title="RlpRevlensDSmodule.DS_Session"><span class="pre">RlpRevlensDSmodule.DS_Session</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Track" title="RlpRevlensDSmodule.DS_Track"><span class="pre">RlpRevlensDSmodule.DS_Track</span></a></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Session.addTrackByType" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Session.addTrackNoSync">
+<span class="sig-name descname"><span class="pre">addTrackNoSync</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session" title="RlpRevlensDSmodule.DS_Session"><span class="pre">RlpRevlensDSmodule.DS_Session</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Track" title="RlpRevlensDSmodule.DS_Track"><span class="pre">RlpRevlensDSmodule.DS_Track</span></a></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Session.addTrackNoSync" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Session.cacheDir">
+<span class="sig-name descname"><span class="pre">cacheDir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session" title="RlpRevlensDSmodule.DS_Session"><span class="pre">RlpRevlensDSmodule.DS_Session</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Session.cacheDir" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Session.clear">
+<span class="sig-name descname"><span class="pre">clear</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session" title="RlpRevlensDSmodule.DS_Session"><span class="pre">RlpRevlensDSmodule.DS_Session</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Session.clear" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Session.clearTrack">
+<span class="sig-name descname"><span class="pre">clearTrack</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session" title="RlpRevlensDSmodule.DS_Session"><span class="pre">RlpRevlensDSmodule.DS_Session</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Session.clearTrack" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Session.deleteTrack">
+<span class="sig-name descname"><span class="pre">deleteTrack</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session" title="RlpRevlensDSmodule.DS_Session"><span class="pre">RlpRevlensDSmodule.DS_Session</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Session.deleteTrack" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Session.emitTrackDataChanged">
+<span class="sig-name descname"><span class="pre">emitTrackDataChanged</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session" title="RlpRevlensDSmodule.DS_Session"><span class="pre">RlpRevlensDSmodule.DS_Session</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Session.emitTrackDataChanged" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Session.frameCount">
+<span class="sig-name descname"><span class="pre">frameCount</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session" title="RlpRevlensDSmodule.DS_Session"><span class="pre">RlpRevlensDSmodule.DS_Session</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Session.frameCount" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Session.frameCountChanged">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">frameCountChanged</span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Session.frameCountChanged" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Session.getAllNodesByFrame">
+<span class="sig-name descname"><span class="pre">getAllNodesByFrame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session" title="RlpRevlensDSmodule.DS_Session"><span class="pre">RlpRevlensDSmodule.DS_Session</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">QList&lt;std::shared_ptr&lt;DS_Node&gt;</span> <span class="pre">&gt;</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Session.getAllNodesByFrame" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Session.getNextTrackIndex">
+<span class="sig-name descname"><span class="pre">getNextTrackIndex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session" title="RlpRevlensDSmodule.DS_Session"><span class="pre">RlpRevlensDSmodule.DS_Session</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Session.getNextTrackIndex" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Session.getNodeByFrame">
+<span class="sig-name descname"><span class="pre">getNodeByFrame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session" title="RlpRevlensDSmodule.DS_Session"><span class="pre">RlpRevlensDSmodule.DS_Session</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Node" title="RlpRevlensDSmodule.DS_Node"><span class="pre">RlpRevlensDSmodule.DS_Node</span></a></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Session.getNodeByFrame" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Session.getNodeByUuid">
+<span class="sig-name descname"><span class="pre">getNodeByUuid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session" title="RlpRevlensDSmodule.DS_Session"><span class="pre">RlpRevlensDSmodule.DS_Session</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Node" title="RlpRevlensDSmodule.DS_Node"><span class="pre">RlpRevlensDSmodule.DS_Node</span></a></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Session.getNodeByUuid" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Session.getNodeFrameIndex">
+<span class="sig-name descname"><span class="pre">getNodeFrameIndex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session" title="RlpRevlensDSmodule.DS_Session"><span class="pre">RlpRevlensDSmodule.DS_Session</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Node" title="RlpRevlensDSmodule.DS_Node"><span class="pre">RlpRevlensDSmodule.DS_Node</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Session.getNodeFrameIndex" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Session.getTrackByIndex">
+<span class="sig-name descname"><span class="pre">getTrackByIndex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session" title="RlpRevlensDSmodule.DS_Session"><span class="pre">RlpRevlensDSmodule.DS_Session</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Track" title="RlpRevlensDSmodule.DS_Track"><span class="pre">RlpRevlensDSmodule.DS_Track</span></a></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Session.getTrackByIndex" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Session.getTrackByUuid">
+<span class="sig-name descname"><span class="pre">getTrackByUuid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session" title="RlpRevlensDSmodule.DS_Session"><span class="pre">RlpRevlensDSmodule.DS_Session</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Track" title="RlpRevlensDSmodule.DS_Track"><span class="pre">RlpRevlensDSmodule.DS_Track</span></a></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Session.getTrackByUuid" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Session.inFrame">
+<span class="sig-name descname"><span class="pre">inFrame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session" title="RlpRevlensDSmodule.DS_Session"><span class="pre">RlpRevlensDSmodule.DS_Session</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Session.inFrame" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Session.inFrameChanged">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">inFrameChanged</span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Session.inFrameChanged" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Session.isFrameValid">
+<span class="sig-name descname"><span class="pre">isFrameValid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session" title="RlpRevlensDSmodule.DS_Session"><span class="pre">RlpRevlensDSmodule.DS_Session</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Session.isFrameValid" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Session.mediaAdded">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">mediaAdded</span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Session.mediaAdded" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Session.mediaAddedDict">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">mediaAddedDict</span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Session.mediaAddedDict" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Session.mediaRemoved">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">mediaRemoved</span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Session.mediaRemoved" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Session.name">
+<span class="sig-name descname"><span class="pre">name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session" title="RlpRevlensDSmodule.DS_Session"><span class="pre">RlpRevlensDSmodule.DS_Session</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Session.name" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Session.numTracks">
+<span class="sig-name descname"><span class="pre">numTracks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session" title="RlpRevlensDSmodule.DS_Session"><span class="pre">RlpRevlensDSmodule.DS_Session</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Session.numTracks" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Session.onMediaAdded">
+<span class="sig-name descname"><span class="pre">onMediaAdded</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session" title="RlpRevlensDSmodule.DS_Session"><span class="pre">RlpRevlensDSmodule.DS_Session</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Node" title="RlpRevlensDSmodule.DS_Node"><span class="pre">RlpRevlensDSmodule.DS_Node</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg3</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Session.onMediaAdded" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Session.onMediaRemoved">
+<span class="sig-name descname"><span class="pre">onMediaRemoved</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session" title="RlpRevlensDSmodule.DS_Session"><span class="pre">RlpRevlensDSmodule.DS_Session</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Node" title="RlpRevlensDSmodule.DS_Node"><span class="pre">RlpRevlensDSmodule.DS_Node</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Session.onMediaRemoved" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Session.onTrackDataChanged">
+<span class="sig-name descname"><span class="pre">onTrackDataChanged</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session" title="RlpRevlensDSmodule.DS_Session"><span class="pre">RlpRevlensDSmodule.DS_Session</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Session.onTrackDataChanged" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Session.outFrame">
+<span class="sig-name descname"><span class="pre">outFrame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session" title="RlpRevlensDSmodule.DS_Session"><span class="pre">RlpRevlensDSmodule.DS_Session</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Session.outFrame" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Session.outFrameChanged">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">outFrameChanged</span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Session.outFrameChanged" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Session.properties">
+<span class="sig-name descname"><span class="pre">properties</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session" title="RlpRevlensDSmodule.DS_Session"><span class="pre">RlpRevlensDSmodule.DS_Session</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Session.properties" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Session.registerTrackFactoryPlugin">
+<span class="sig-name descname"><span class="pre">registerTrackFactoryPlugin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session" title="RlpRevlensDSmodule.DS_Session"><span class="pre">RlpRevlensDSmodule.DS_Session</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DS_TrackFactoryPlugin</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Session.registerTrackFactoryPlugin" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Session.sessionCleared">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">sessionCleared</span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Session.sessionCleared" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Session.setFrameCount">
+<span class="sig-name descname"><span class="pre">setFrameCount</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session" title="RlpRevlensDSmodule.DS_Session"><span class="pre">RlpRevlensDSmodule.DS_Session</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Session.setFrameCount" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Session.setInFrame">
+<span class="sig-name descname"><span class="pre">setInFrame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session" title="RlpRevlensDSmodule.DS_Session"><span class="pre">RlpRevlensDSmodule.DS_Session</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Session.setInFrame" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Session.setOutFrame">
+<span class="sig-name descname"><span class="pre">setOutFrame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session" title="RlpRevlensDSmodule.DS_Session"><span class="pre">RlpRevlensDSmodule.DS_Session</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Session.setOutFrame" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Session.setTrackEnabled">
+<span class="sig-name descname"><span class="pre">setTrackEnabled</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session" title="RlpRevlensDSmodule.DS_Session"><span class="pre">RlpRevlensDSmodule.DS_Session</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Session.setTrackEnabled" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Session.setTrackIndexOrderPolicy">
+<span class="sig-name descname"><span class="pre">setTrackIndexOrderPolicy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self:</span> <span class="pre">RlpRevlensDSmodule.DS_Session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0:</span> <span class="pre">DS_Session::TrackIndexOrderPolicy</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Session.setTrackIndexOrderPolicy" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Session.setTrackTypeIndexOrder">
+<span class="sig-name descname"><span class="pre">setTrackTypeIndexOrder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session" title="RlpRevlensDSmodule.DS_Session"><span class="pre">RlpRevlensDSmodule.DS_Session</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Session.setTrackTypeIndexOrder" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Session.siteCacheDir">
+<span class="sig-name descname"><span class="pre">siteCacheDir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session" title="RlpRevlensDSmodule.DS_Session"><span class="pre">RlpRevlensDSmodule.DS_Session</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Session.siteCacheDir" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Session.startFrame">
+<span class="sig-name descname"><span class="pre">startFrame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session" title="RlpRevlensDSmodule.DS_Session"><span class="pre">RlpRevlensDSmodule.DS_Session</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Session.startFrame" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Session.syncAction">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">syncAction</span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Session.syncAction" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Session.toJson">
+<span class="sig-name descname"><span class="pre">toJson</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session" title="RlpRevlensDSmodule.DS_Session"><span class="pre">RlpRevlensDSmodule.DS_Session</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">RlpCoreQTCORE.QJsonObject</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Session.toJson" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Session.trackAdded">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">trackAdded</span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Session.trackAdded" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Session.trackCleared">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">trackCleared</span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Session.trackCleared" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Session.trackDataChanged">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">trackDataChanged</span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Session.trackDataChanged" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Session.trackDeleted">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">trackDeleted</span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Session.trackDeleted" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Session.trackIndexOrderPolicy">
+<span class="sig-name descname"><span class="pre">trackIndexOrderPolicy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session" title="RlpRevlensDSmodule.DS_Session"><span class="pre">RlpRevlensDSmodule.DS_Session</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DS_Session::TrackIndexOrderPolicy</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Session.trackIndexOrderPolicy" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Session.trackList">
+<span class="sig-name descname"><span class="pre">trackList</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session" title="RlpRevlensDSmodule.DS_Session"><span class="pre">RlpRevlensDSmodule.DS_Session</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">QList&lt;std::shared_ptr&lt;DS_Track&gt;</span> <span class="pre">&gt;</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Session.trackList" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Session.trackTypeIndexOrder">
+<span class="sig-name descname"><span class="pre">trackTypeIndexOrder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session" title="RlpRevlensDSmodule.DS_Session"><span class="pre">RlpRevlensDSmodule.DS_Session</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Session.trackTypeIndexOrder" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Session.trackVisibilityChanged">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">trackVisibilityChanged</span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Session.trackVisibilityChanged" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Session.updateProperties">
+<span class="sig-name descname"><span class="pre">updateProperties</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session" title="RlpRevlensDSmodule.DS_Session"><span class="pre">RlpRevlensDSmodule.DS_Session</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Session.updateProperties" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Session.uuid">
+<span class="sig-name descname"><span class="pre">uuid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session" title="RlpRevlensDSmodule.DS_Session"><span class="pre">RlpRevlensDSmodule.DS_Session</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">RlpCoreQTCORE.QUuid</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Session.uuid" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Track">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">RlpRevlensDSmodule.</span></span><span class="sig-name descname"><span class="pre">DS_Track</span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Track" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Track.cacheDir">
+<span class="sig-name descname"><span class="pre">cacheDir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Track" title="RlpRevlensDSmodule.DS_Track"><span class="pre">RlpRevlensDSmodule.DS_Track</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">QDir</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Track.cacheDir" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Track.clear">
+<span class="sig-name descname"><span class="pre">clear</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Track" title="RlpRevlensDSmodule.DS_Track"><span class="pre">RlpRevlensDSmodule.DS_Track</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Track.clear" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Track.dataReady">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dataReady</span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Track.dataReady" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Track.enabled">
+<span class="sig-name descname"><span class="pre">enabled</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Track" title="RlpRevlensDSmodule.DS_Track"><span class="pre">RlpRevlensDSmodule.DS_Track</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Track.enabled" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Track.getFrames">
+<span class="sig-name descname"><span class="pre">getFrames</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Track" title="RlpRevlensDSmodule.DS_Track"><span class="pre">RlpRevlensDSmodule.DS_Track</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Track.getFrames" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Track.getMaxFrameNum">
+<span class="sig-name descname"><span class="pre">getMaxFrameNum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Track" title="RlpRevlensDSmodule.DS_Track"><span class="pre">RlpRevlensDSmodule.DS_Track</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Track.getMaxFrameNum" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Track.getMediaFrameNum">
+<span class="sig-name descname"><span class="pre">getMediaFrameNum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Track" title="RlpRevlensDSmodule.DS_Track"><span class="pre">RlpRevlensDSmodule.DS_Track</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Track.getMediaFrameNum" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Track.getNodeByFrame">
+<span class="sig-name descname"><span class="pre">getNodeByFrame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Track" title="RlpRevlensDSmodule.DS_Track"><span class="pre">RlpRevlensDSmodule.DS_Track</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Node" title="RlpRevlensDSmodule.DS_Node"><span class="pre">RlpRevlensDSmodule.DS_Node</span></a></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Track.getNodeByFrame" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Track.getNodeFrameIndex">
+<span class="sig-name descname"><span class="pre">getNodeFrameIndex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Track" title="RlpRevlensDSmodule.DS_Track"><span class="pre">RlpRevlensDSmodule.DS_Track</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Node" title="RlpRevlensDSmodule.DS_Node"><span class="pre">RlpRevlensDSmodule.DS_Node</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Track.getNodeFrameIndex" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Track.getNodeFrameList">
+<span class="sig-name descname"><span class="pre">getNodeFrameList</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Track" title="RlpRevlensDSmodule.DS_Track"><span class="pre">RlpRevlensDSmodule.DS_Track</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Track.getNodeFrameList" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Track.getNodeInfo">
+<span class="sig-name descname"><span class="pre">getNodeInfo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Track" title="RlpRevlensDSmodule.DS_Track"><span class="pre">RlpRevlensDSmodule.DS_Track</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Track.getNodeInfo" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Track.hasNode">
+<span class="sig-name descname"><span class="pre">hasNode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Track" title="RlpRevlensDSmodule.DS_Track"><span class="pre">RlpRevlensDSmodule.DS_Track</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Track.hasNode" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Track.index">
+<span class="sig-name descname"><span class="pre">index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Track" title="RlpRevlensDSmodule.DS_Track"><span class="pre">RlpRevlensDSmodule.DS_Track</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Track.index" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Track.insertNode">
+<span class="sig-name descname"><span class="pre">insertNode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Track" title="RlpRevlensDSmodule.DS_Track"><span class="pre">RlpRevlensDSmodule.DS_Track</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Node" title="RlpRevlensDSmodule.DS_Node"><span class="pre">RlpRevlensDSmodule.DS_Node</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Track.insertNode" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Track.isEditable">
+<span class="sig-name descname"><span class="pre">isEditable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Track" title="RlpRevlensDSmodule.DS_Track"><span class="pre">RlpRevlensDSmodule.DS_Track</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Track.isEditable" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Track.load">
+<span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Track" title="RlpRevlensDSmodule.DS_Track"><span class="pre">RlpRevlensDSmodule.DS_Track</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DS_Factory</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Track.load" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Track.mediaAdded">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">mediaAdded</span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Track.mediaAdded" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Track.mediaCount">
+<span class="sig-name descname"><span class="pre">mediaCount</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Track" title="RlpRevlensDSmodule.DS_Track"><span class="pre">RlpRevlensDSmodule.DS_Track</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Track.mediaCount" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Track.mediaRemoved">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">mediaRemoved</span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Track.mediaRemoved" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Track.moveNodeToFrame">
+<span class="sig-name descname"><span class="pre">moveNodeToFrame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Track" title="RlpRevlensDSmodule.DS_Track"><span class="pre">RlpRevlensDSmodule.DS_Track</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Node" title="RlpRevlensDSmodule.DS_Node"><span class="pre">RlpRevlensDSmodule.DS_Node</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Track.moveNodeToFrame" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Track.name">
+<span class="sig-name descname"><span class="pre">name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Track" title="RlpRevlensDSmodule.DS_Track"><span class="pre">RlpRevlensDSmodule.DS_Track</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Track.name" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Track.onNodeDataReadyReceived">
+<span class="sig-name descname"><span class="pre">onNodeDataReadyReceived</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Track" title="RlpRevlensDSmodule.DS_Track"><span class="pre">RlpRevlensDSmodule.DS_Track</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Track.onNodeDataReadyReceived" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Track.owner">
+<span class="sig-name descname"><span class="pre">owner</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Track" title="RlpRevlensDSmodule.DS_Track"><span class="pre">RlpRevlensDSmodule.DS_Track</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Track.owner" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Track.removeNodeByFrame">
+<span class="sig-name descname"><span class="pre">removeNodeByFrame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Track" title="RlpRevlensDSmodule.DS_Track"><span class="pre">RlpRevlensDSmodule.DS_Track</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Track.removeNodeByFrame" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Track.session">
+<span class="sig-name descname"><span class="pre">session</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Track" title="RlpRevlensDSmodule.DS_Track"><span class="pre">RlpRevlensDSmodule.DS_Track</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Session" title="RlpRevlensDSmodule.DS_Session"><span class="pre">DS_Session</span></a></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Track.session" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Track.setEnabled">
+<span class="sig-name descname"><span class="pre">setEnabled</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Track" title="RlpRevlensDSmodule.DS_Track"><span class="pre">RlpRevlensDSmodule.DS_Track</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Track.setEnabled" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Track.setName">
+<span class="sig-name descname"><span class="pre">setName</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Track" title="RlpRevlensDSmodule.DS_Track"><span class="pre">RlpRevlensDSmodule.DS_Track</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Track.setName" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Track.setOwner">
+<span class="sig-name descname"><span class="pre">setOwner</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Track" title="RlpRevlensDSmodule.DS_Track"><span class="pre">RlpRevlensDSmodule.DS_Track</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Track.setOwner" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Track.setTrackIndex">
+<span class="sig-name descname"><span class="pre">setTrackIndex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Track" title="RlpRevlensDSmodule.DS_Track"><span class="pre">RlpRevlensDSmodule.DS_Track</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Track.setTrackIndex" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Track.setTrackTypeName">
+<span class="sig-name descname"><span class="pre">setTrackTypeName</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Track" title="RlpRevlensDSmodule.DS_Track"><span class="pre">RlpRevlensDSmodule.DS_Track</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Track.setTrackTypeName" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Track.toJson">
+<span class="sig-name descname"><span class="pre">toJson</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Track" title="RlpRevlensDSmodule.DS_Track"><span class="pre">RlpRevlensDSmodule.DS_Track</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">RlpCoreQTCORE.QJsonObject</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Track.toJson" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Track.trackCleared">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">trackCleared</span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Track.trackCleared" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Track.trackDataChanged">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">trackDataChanged</span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Track.trackDataChanged" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Track.trackType">
+<span class="sig-name descname"><span class="pre">trackType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Track" title="RlpRevlensDSmodule.DS_Track"><span class="pre">RlpRevlensDSmodule.DS_Track</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Track.trackType" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Track.trackTypeName">
+<span class="sig-name descname"><span class="pre">trackTypeName</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Track" title="RlpRevlensDSmodule.DS_Track"><span class="pre">RlpRevlensDSmodule.DS_Track</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Track.trackTypeName" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.DS_Track.uuid">
+<span class="sig-name descname"><span class="pre">uuid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#RlpRevlensDSmodule.DS_Track" title="RlpRevlensDSmodule.DS_Track"><span class="pre">RlpRevlensDSmodule.DS_Track</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">RlpCoreQTCORE.QUuid</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.DS_Track.uuid" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="RlpRevlensDSmodule.init_module">
+<span class="sig-prename descclassname"><span class="pre">RlpRevlensDSmodule.</span></span><span class="sig-name descname"><span class="pre">init_module</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#RlpRevlensDSmodule.init_module" title="Link to this definition"></a></dt>
+<dd><p>Bootstrap Python Bindings</p>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Justin Ottley.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

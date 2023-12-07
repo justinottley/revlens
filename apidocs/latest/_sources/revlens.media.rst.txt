@@ -1,0 +1,37 @@
+revlens.media package
+=====================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   revlens.media.builder
+
+Submodules
+----------
+
+revlens.media.locator module
+----------------------------
+
+.. automodule:: revlens.media.locator
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+revlens.media.translation\_map module
+-------------------------------------
+
+.. automodule:: revlens.media.translation_map
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: revlens.media
+   :members:
+   :undoc-members:
+   :show-inheritance:

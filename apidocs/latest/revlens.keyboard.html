@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>revlens.keyboard package &mdash; revlens 23.11.20 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=9cbcb6cc"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            revlens
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">revlens.keyboard package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-revlens.keyboard.key_default">revlens.keyboard.key_default module</a><ul>
+<li><a class="reference internal" href="#revlens.keyboard.key_default.register_keys"><code class="docutils literal notranslate"><span class="pre">register_keys()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-revlens.keyboard">Module contents</a><ul>
+<li><a class="reference internal" href="#revlens.keyboard.KeyBinding"><code class="docutils literal notranslate"><span class="pre">KeyBinding</span></code></a><ul>
+<li><a class="reference internal" href="#revlens.keyboard.KeyBinding.KEY_BINDINGS"><code class="docutils literal notranslate"><span class="pre">KeyBinding.KEY_BINDINGS</span></code></a></li>
+<li><a class="reference internal" href="#revlens.keyboard.KeyBinding.register"><code class="docutils literal notranslate"><span class="pre">KeyBinding.register()</span></code></a></li>
+<li><a class="reference internal" href="#revlens.keyboard.KeyBinding.run"><code class="docutils literal notranslate"><span class="pre">KeyBinding.run()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#revlens.keyboard.KeyEntry"><code class="docutils literal notranslate"><span class="pre">KeyEntry</span></code></a><ul>
+<li><a class="reference internal" href="#revlens.keyboard.KeyEntry.KEY_MAP"><code class="docutils literal notranslate"><span class="pre">KeyEntry.KEY_MAP</span></code></a></li>
+<li><a class="reference internal" href="#revlens.keyboard.KeyEntry.OPSYS"><code class="docutils literal notranslate"><span class="pre">KeyEntry.OPSYS</span></code></a></li>
+<li><a class="reference internal" href="#revlens.keyboard.KeyEntry.match"><code class="docutils literal notranslate"><span class="pre">KeyEntry.match()</span></code></a></li>
+<li><a class="reference internal" href="#revlens.keyboard.KeyEntry.register_key_entry"><code class="docutils literal notranslate"><span class="pre">KeyEntry.register_key_entry()</span></code></a></li>
+<li><a class="reference internal" href="#revlens.keyboard.KeyEntry.update"><code class="docutils literal notranslate"><span class="pre">KeyEntry.update()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#revlens.keyboard.getKeystroke"><code class="docutils literal notranslate"><span class="pre">getKeystroke()</span></code></a></li>
+<li><a class="reference internal" href="#revlens.keyboard.handle_key_press_event"><code class="docutils literal notranslate"><span class="pre">handle_key_press_event()</span></code></a></li>
+<li><a class="reference internal" href="#revlens.keyboard.match"><code class="docutils literal notranslate"><span class="pre">match()</span></code></a></li>
+<li><a class="reference internal" href="#revlens.keyboard.register_key_binding"><code class="docutils literal notranslate"><span class="pre">register_key_binding()</span></code></a></li>
+<li><a class="reference internal" href="#revlens.keyboard.register_key_entry"><code class="docutils literal notranslate"><span class="pre">register_key_entry()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">revlens</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">revlens.keyboard package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/revlens.keyboard.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="revlens-keyboard-package">
+<h1>revlens.keyboard package<a class="headerlink" href="#revlens-keyboard-package" title="Link to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-revlens.keyboard.key_default">
+<span id="revlens-keyboard-key-default-module"></span><h2>revlens.keyboard.key_default module<a class="headerlink" href="#module-revlens.keyboard.key_default" title="Link to this heading"></a></h2>
+<p>Copyright (c) 2014-2019 Justin Ottley. All rights reserved.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="revlens.keyboard.key_default.register_keys">
+<span class="sig-prename descclassname"><span class="pre">revlens.keyboard.key_default.</span></span><span class="sig-name descname"><span class="pre">register_keys</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#revlens.keyboard.key_default.register_keys" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-revlens.keyboard">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-revlens.keyboard" title="Link to this heading"></a></h2>
+<p>Copyright (c) 2014-2019 Justin Ottley. All rights reserved.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="revlens.keyboard.KeyBinding">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">revlens.keyboard.</span></span><span class="sig-name descname"><span class="pre">KeyBinding</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key_entry_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">func_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#revlens.keyboard.KeyBinding" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="revlens.keyboard.KeyBinding.KEY_BINDINGS">
+<span class="sig-name descname"><span class="pre">KEY_BINDINGS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#revlens.keyboard.KeyBinding.KEY_BINDINGS" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="revlens.keyboard.KeyBinding.register">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">register</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key_entry_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">func_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#revlens.keyboard.KeyBinding.register" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="revlens.keyboard.KeyBinding.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#revlens.keyboard.KeyBinding.run" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="revlens.keyboard.KeyEntry">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">revlens.keyboard.</span></span><span class="sig-name descname"><span class="pre">KeyEntry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">modifiers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">platform</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#revlens.keyboard.KeyEntry" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="revlens.keyboard.KeyEntry.KEY_MAP">
+<span class="sig-name descname"><span class="pre">KEY_MAP</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#revlens.keyboard.KeyEntry.KEY_MAP" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="revlens.keyboard.KeyEntry.OPSYS">
+<span class="sig-name descname"><span class="pre">OPSYS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Linux'</span></em><a class="headerlink" href="#revlens.keyboard.KeyEntry.OPSYS" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="revlens.keyboard.KeyEntry.match">
+<span class="sig-name descname"><span class="pre">match</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#revlens.keyboard.KeyEntry.match" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="revlens.keyboard.KeyEntry.register_key_entry">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">register_key_entry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">modifiers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">platform</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#revlens.keyboard.KeyEntry.register_key_entry" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="revlens.keyboard.KeyEntry.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">modifiers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">platform</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#revlens.keyboard.KeyEntry.update" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="revlens.keyboard.getKeystroke">
+<span class="sig-prename descclassname"><span class="pre">revlens.keyboard.</span></span><span class="sig-name descname"><span class="pre">getKeystroke</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#revlens.keyboard.getKeystroke" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="revlens.keyboard.handle_key_press_event">
+<span class="sig-prename descclassname"><span class="pre">revlens.keyboard.</span></span><span class="sig-name descname"><span class="pre">handle_key_press_event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#revlens.keyboard.handle_key_press_event" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="revlens.keyboard.match">
+<span class="sig-prename descclassname"><span class="pre">revlens.keyboard.</span></span><span class="sig-name descname"><span class="pre">match</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#revlens.keyboard.match" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="revlens.keyboard.register_key_binding">
+<span class="sig-prename descclassname"><span class="pre">revlens.keyboard.</span></span><span class="sig-name descname"><span class="pre">register_key_binding</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key_binding</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#revlens.keyboard.register_key_binding" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="revlens.keyboard.register_key_entry">
+<span class="sig-prename descclassname"><span class="pre">revlens.keyboard.</span></span><span class="sig-name descname"><span class="pre">register_key_entry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">modifiers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">platform</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#revlens.keyboard.register_key_entry" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Justin Ottley.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
